@@ -99,7 +99,7 @@ unique_deps <- (all_deps
 
 rdg1 <-igraph::graph_from_data_frame(unique_deps[,c("to", "from")])
 
-plot(rdg1)
+## plot(rdg1)
      
 ## 3. collect importance measures
 
@@ -142,8 +142,10 @@ pp2 <- (pp$package.data
 a3 <- (full_join(pp2, a2, by="focal")
     |> full_join(central_tbl, by="focal")
     |> mutate_at("central",replace_na,0)
-    |> mutate(score=percentile/100+strong/max(strong)+central)
+    |> mutate(score=percentile/100+strong/max(strong)+central, .before = downloads)
     |> mutate(across(where(is.double), round, 3))
+    |> mutate(in_taskview = focal %in% ctv_pkgs, .before = downloads)
+    |> rename(package = "focal")
     |> arrange(desc(score))
 )
 
