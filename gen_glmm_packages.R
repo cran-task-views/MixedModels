@@ -3,8 +3,11 @@ library(tidyverse) ## general
 library(miniCRAN)
 library(crandep)
 library(igraph)
+library(ctv)
 ## library(packdep) ## archived ...
 library(packageRank)
+
+options(repos = c(CRAN = "https://cloud.r-project.org"))
 
 ## 1. plot reverse dependencies of lme4
 ## dependency types to include
@@ -25,23 +28,37 @@ a1 <- available.packages()
 ## lm followed by ("m or e") followed by (a character not "t" or the end of the string)
 regexps <- c("lm(m|e([^t]|$))")  ## was using "mixed" but ... ? should check,
 find_pkgs <- function(x) grep(x, rownames(a1), value=TRUE, ignore.case=TRUE)
-focal_pkgs <- character(0)
+regex_pkgs <- character(0)
 for (r in regexps) {
-    focal_pkgs <- union(focal_pkgs, find_pkgs(r))
+    regex_pkgs <- union(regex_pkgs, find_pkgs(r))
 }
 ## false pos
-fpos <- c("palmerpenguins", "curtailment")
+fpos <- c("palmerpenguins", "curtailment", "yamlme", "mailmerge")
+
+
 ## false negatives: some known-interesting pkgs *not* picked up by regex
 ## (check MixedModels.ctv for some more)
-fneg <- c("SASmixed","broom.mixed",
-          "pbkrtest","emmeans","mgcv","gamm4",
-          "brms","rstanarm","pez","merDeriv","repeated","hglm",
-          "geesmv","geepack","influence.ME","cAIC4","HLMdiag","lmmfit","iccbeta",
-          "DHARMa","effects","rockchalk","arm","performance","car",
-          "ez","afex","RVAideMemoire","geoRglm","GLMMarp","spaMM",
-          "polytomous","ordinal","longpower")
-focal_pkgs <- focal_pkgs |> setdiff(fpos) |> union(fneg)
-length(focal_pkgs) ## 97
+## fneg <- c("SASmixed", "broom.mixed",
+##           "pbkrtest", "emmeans", "mgcv", "gamm4",
+##           "brms", "rstanarm", "pez", "merDeriv", "repeated", "hglm",
+##           "geesmv", "geepack", "influence.ME", "cAIC4", "HLMdiag", "lmmfit",
+##           "iccbeta", "DHARMa", "effects", "rockchalk",
+##           "arm", "performance", "car",
+##           "ez", "afex", "RVAideMemoire", "geoRglm", "GLMMarp", "spaMM",
+##           "polytomous", "ordinal", "longpower")
+
+
+regex_pkgs <- setdiff(regex_pkgs, fpos)
+rr <- read.ctv("MixedModels.md")
+bad_pkgs <- unlist(check_ctv_packages("MixedModels.md"))
+ctv_pkgs <- setdiff(rr$packagelist[,"name"], bad_pkgs)
+
+omit_pkgs <- "MASS"
+## don't want to include MASS in ranking (it's only in there for glmmPQL)
+
+focal_pkgs <- union(ctv_pkgs, regex_pkgs) |> setdiff(omit_pkgs)
+
+length(focal_pkgs) ## 128
 
 ## now extract
 pkg_rd <- (expand_grid(name=focal_pkgs, type=rd))
@@ -51,7 +68,7 @@ pb <- txtProgressBar(max=nrow(pkg_rd), style=3)
 i <- 0
 ff <- function(name,type) {
     ## cat(".")
-    ## cat(name,"\n")
+    ## cat(name, "\n")
     i <<- i+1
     setTxtProgressBar(pb,i)
     gd <- get_dep(name,type)
@@ -70,11 +87,8 @@ if (file.exists("all_deps.rds")) {
         |> bind_rows()
     )
     )
-    saveRDS(all_deps,"all_deps.rds")
+    saveRDS(all_deps, "all_deps.rds")
 }
-
-all_deps |> unnest(all_deps, col = dep_pkg)
-## don't drop NA vals yet -- about 2/3 of packages (all but 28) have no RDs at all
 
 ## disregard numbers, for purposes of plotting
 unique_deps <- (all_deps
@@ -83,7 +97,7 @@ unique_deps <- (all_deps
     |> filter(to %in% focal_pkgs)
 )
 
-rdg1 <-igraph::graph_from_data_frame(unique_deps[,c("to","from")])
+rdg1 <-igraph::graph_from_data_frame(unique_deps[,c("to", "from")])
 
 plot(rdg1)
      
@@ -95,7 +109,7 @@ central_tbl <- tibble(focal=names(cc), central=cc)
 a1a <- (all_deps
     |> mutate_at("type", str_remove, "Reverse ")
     |> mutate_at("type",
-                  ~ case_when(. %in% c("depends","imports") ~ "strong",
+                  ~ case_when(. %in% c("depends", "imports") ~ "strong",
                               TRUE ~ "weak"))
 )
 
@@ -139,6 +153,3 @@ a3 <- (full_join(pp2, a2, by="focal")
 
 write_csv(a3, "glmm_packages.csv")
 rmarkdown::render("glmm_packages_meta.rmd", output_format = "md_document")
-
-
-
