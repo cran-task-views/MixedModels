@@ -57,7 +57,7 @@ NLMMs incorporate arbitrary nonlinear responses that cannot be accommodated in t
 
 ### Generalized estimating equations (GEEs)
 
-GEEs represent an alternative approach to fitting clustered, longitudinal, or otherwise correlated data; GEE fits produce estimates of the *marginal* effects (averaged across the group-level variation) rather than *conditional* effects (conditioned on group-level information) `r pkg(" wgeesel")`, `r pkg("geesmv")`, `r pkg("geepack", priority = "core")`, `r pkg("gee")`, `r pkg("multgee")`  and `r pkg("geeM")`
+GEEs represent an alternative approach to fitting clustered, longitudinal, or otherwise correlated data; GEE fits produce estimates of the *marginal* effects (averaged across the group-level variation) rather than *conditional* effects (conditioned on group-level information) `r pkg("wgeesel")`, `r pkg("geesmv")`, `r pkg("geepack", priority = "core")`, `r pkg("gee")`, `r pkg("multgee")`  and `r pkg("geeM")`
 
 ## Specialized models
 
@@ -67,7 +67,7 @@ GEEs represent an alternative approach to fitting clustered, longitudinal, or ot
 - **Censored data** (responses : `r pkg("brms")` (general), `r pkg("lmec")` (censored Gaussian), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors) and `r pkg("tlmec")` (censored Gaussian and t)
 - **Ordinal-valued responses**: `r pkg("ordinal")`, `r pkg("cplm")`
 - **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`; (Bayesian): `r pkg("MCMCglmm")`, `r pkg("brms")`.
-- **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrLM")`,`r pkg("qrNLMM")`
+- **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrLMM")`,`r pkg("qrNLMM")`
 - **Phylogenetic/pedigree-based models**: `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("pez")`, `r pkg("kinship2")`
 - **Survival analysis** (random effects are often referred to *frailty terms* in survival-analysis contexts): `r pkg("coxme")`
 - **Spatial models**: [INLA](http://www.r-inla.org/home), `r pkg("nlme")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes) (brms?) (See also `r view("Handling and Analyzing Spatio-Temporal Data")`)
@@ -102,7 +102,7 @@ GEEs represent an alternative approach to fitting clustered, longitudinal, or ot
 
 ## Model presentation and prediction
 
-Functions and frameworks for convenient and tabular and graphical output of mixed model results: `r pkg("effects")` `r pkg("emmeans")`, `r pkg("dotwhisker")`, `r pkg("huxtable")`, `r pkg("sjPlots")`, `r pkg("rockchalk")`
+Functions and frameworks for convenient and tabular and graphical output of mixed model results: `r pkg("effects")` `r pkg("emmeans")`, `r pkg("dotwhisker")`, `r pkg("huxtable")`, `r pkg("sjPlot")`, `r pkg("rockchalk")`
 
 
 `r pkg("broom.mixed")`, `r pkg("insight")`
@@ -122,7 +122,7 @@ provide convenient frameworks for less experienced users to fit and interpret mi
 
 ## Inference
 
-`r pkg("pbkrtest")`, `r pkg("afex")` `r pkg("varTestnlme")`, `r pkg("lmeVarComp")`, `r pkg("RLRLsim")`, `r pkg("car")` (`Anova()`), `r pkg("CLME")`, `r pkg("lmertest")`
+`r pkg("pbkrtest")`, `r pkg("afex")` `r pkg("varTestnlme")`, `r pkg("lmeVarComp")`, `r pkg("RLRsim")`, `r pkg("car")` (`Anova()`), `r pkg("CLME")`, `r pkg("lmerTest")`
 
 ## Bootstrapping
 
