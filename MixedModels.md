@@ -34,7 +34,7 @@ linear predictor.
 
 #### Frequentist 
 
-`r pkg("MASS")` (`glmmPQL`: fits via penalized quasi-likelihood), `r pkg("lme4")` (`glmer`: Laplace approximation and adaptive Gauss-Hermite quadrature), `r pkg("glmmTMB")` (Laplace approximation), `r pkg(GLMMadaptive)`, `r pkg("hglm")` (hierarchical GLMs). 
+`r pkg("MASS")` (`glmmPQL`: fits via penalized quasi-likelihood), `r pkg("lme4")` (`glmer`: Laplace approximation and adaptive Gauss-Hermite quadrature), `r pkg("glmmTMB")` (Laplace approximation), `r pkg("GLMMadaptive")`, `r pkg("hglm")` (hierarchical GLMs). 
   
 #### Bayesian 
        
