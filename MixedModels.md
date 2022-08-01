@@ -1,63 +1,78 @@
 ---
 name: MixedModels
 topic: Mixed, multilevel, and hierarchical models in R
-maintainer: Ben Bolker, ?
-e-mail: bolker@mcmaster.ca, ?
+maintainer: Ben Bolker, Julia Piaskowski
+e-mail: bolker@mcmaster.ca
 version: 2022-07-29
 source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedModels.md
 ---
 
-**Authors**: Ben Bolker, Michael Agronah, ??
+**Authors**: Ben Bolker, Michael Agronah, ??  
 
-*Mixed models* are a broad class of statistical models used to analyze data where observations can be assigned to discrete groups, and where the parameters describing the differences are treated as *random variables*. They are also variously described as *multilevel*, *hierarchical*, or *repeated measures* models; *longitudinal* data are often analyzed in this framework as well.  Mixed models can be fitted in either frequentist or Bayesian frameworks.
+*Mixed models* are a broad class of statistical models used to analyze data where observations can be assigned to discrete groups, and where the parameters describing the differences are treated as *random variables*. They are also described as *multilevel*, or *hierarchical*,  models; *longitudinal* data are often analyzed in this framework.  Mixed models can be fitted in either frequentist or Bayesian frameworks.
 
-**Scope**: only including models that incorporate *continuous* (usually although not always Gaussian) latent variables; this excludes packages that handle hidden Markov Models, finite (discrete) mixture models, latent Markov models, etc..
+**Scope**: only including models that incorporate *continuous* (usually although not always Gaussian) latent variables; this excludes packages that handle hidden Markov Models, finite (discrete) mixture models, latent Markov models, etc.
 
 ## Basic model fitting
 
-LMMs are models with Normal residuals, responses that are linear combinations of the predictor variables, and Normal distributions of the random effects/latent variables.
+This section is to describe linear mixed models (LMM) under the following assumpitions:
+    1. The responses are linear combinations of the predictor variables;
+    2. the error residuals are normally-distributed residuals;
+    3. the random effects are normally distributed.  
 
 ### Linear mixed models
 
 #### Frequentist
 
-The most commonly used packages (functions) for frequentist LMMs are `r pkg("nlme", priority = "core")` (`lme`: REML/ML estimation, multiple nested random effects, residual correlation and heteroscedasticity) and `r pkg("lme4", priority = "core")` (`lmer`: REML/ML, nested and crossed REs, profile confidence intervals, parametric bootstrapping).
+The most commonly used packages and/or functions for frequentist LMMs are:
 
-#### Bayesian 
+- `r pkg("nlme", priority = "core")`: `nlme::lme` conducts REML or ML estimation, can include multiple nested random effects, and construction residual correlation structures for heteroscedasticity.
+- `r pkg("lme4", priority = "core")`: `lmer4::lmer`) conducts REML or ML estimation, can included multiple nested and random effects, can profile confidence intervals, and conduct parametric bootstrapping. 
 
-Most packages use Markov chain Monte Carlo estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")` and `r pkg("brms", priority = "core")`; the latter two packages are built on [Stan](mc-stan.org). `r pkg("blme")`, built on `r pkg("lme4")`, uses MAP estimation.
-    
+#### Bayesian
+
+Most Bayesian R packages use Markov chain Monte Carlo (MCMC) estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")` and `r pkg("brms", priority = "core")`; the latter two packages uses the [Stan](mc-stan.org) infrastructure. `r pkg("blme")`, built on `r pkg("lme4")`, uses maximum a posteriori (MAP) estimation.
+
 ### Generalized linear mixed models
 
-Generalized linear mixed models (GLMMs) can be seen as hierarchical extensions of generalized linear models (GLMs), or a extensions of LMMs to different response distributions (typically in the exponential family). The random-effect distributions are typically assumed to be Gaussian on the scale of the
-linear predictor. 
+Generalized linear mixed models (GLMMs) can be described as hierarchical extensions of generalized linear models (GLMs), or a extensions of LMMs to different response distributions, typically in the exponential family. The random-effect distributions are typically assumed to be Gaussian on the scale of the linear predictor.
 
-#### Frequentist 
+#### Frequentist
 
-`r pkg("MASS")` (`glmmPQL`: fits via penalized quasi-likelihood), `r pkg("lme4")` (`glmer`: Laplace approximation and adaptive Gauss-Hermite quadrature), `r pkg("glmmTMB")` (Laplace approximation), `r pkg("GLMMadaptive")`, `r pkg("hglm")` (hierarchical GLMs). 
+- `r pkg("MASS")`: `MASS::glmmPQL` fits via penalized quasi-likelihood.
+- `r pkg("lme4")`: `lme4::glmer` does a Laplace approximation and adaptive Gauss-Hermite quadrature, and `r pkg("glmmTMB")` also does a Laplace approximation).
+- `r pkg("GLMMadaptive")` and `r pkg("hglm")` handle hierarchical GLMs.
   
-#### Bayesian 
-       
-`r pkg("MCMCglmm")`,`r pkg("rstanarm")`, `r pkg("brms")` and `r pkg("glmm")`  fit GLMMs in a Bayesian MCMC framework. `r pkg("MCMCglmm")`  fits GLMMs using Markov chain Monte Carlo techniques. `r pkg("rstanarm")` fits GLMMs using Markov Chain Monte Carlo, variational approximations to the posterior distribution, or optimization. `r pkg("brms")` supports a wide range of distributions and link functions for fitting GLMMs. `r pkg("glmm")` fits GLMMs using Monte Carlo Likelihood Approximation. 
+#### Bayesian
+ 
+- `r pkg("MCMCglmm")` fits GLMMs using MCMC techniques. 
+- `r pkg("rstanarm")` fits GLMMs using Markov Chain Monte Carlo, variational approximations to the posterior distribution, or optimization. 
+- `r pkg("brms")` supports a wide range of distributions and link functions for fitting GLMMs. 
+- `r pkg("glmm")` fits GLMMs using Monte Carlo Likelihood Approximation.
+- *binary data* Two packages can handle binary data. `r pkg("glmmEP")`, which handles probit models and `r pkg("GLMMRR")` which can use one of four different cumulative distribution functions. 
 
-**DELETE?** Packages specialized on binary data: `r pkg("glmmEP")` (expectation propagation, probit models only); `r pkg("GLMMRR")` (binary randomized response data)
+### Nonlinear mixed models
 
-### Nonlinear mixed models ([G]NLMMs)
-
-NLMMs incorporate arbitrary nonlinear responses that cannot be accommodated in the framework of GLMMs. Only a few packages can accommodate **generalized** nonlinear mixed models
+Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be accommodated in the framework of GLMMs. Only a few packages can accommodate **generalized** nonlinear mixed models
 (i.e., nonlinear mixed models with non-Gaussian responses).
 
 #### Frequentist
 
-`r pkg("nlme")` (`nlme`), `r pkg("lme4")` (`nlmer`), `r pkg("repeated")` [GNLMM], `r pkg("saemix")` (stochastic approximation EM algorithm).
+- The functions `nlme::nlme()` from `r pkg("nlme")`, `lmer4::nlmer()` from `r pkg("lme4")` and `GNLMM()` from `r pkg("repeated")` can conduct basic model fitting.
+- `r pkg("saemix")` provides a stochastic approximation of the EM algorithm.
 
 #### Bayesian
 
-- `r pkg("brms")` [GNLMM?]
+- `r pkg("brms")` supports non-linear mixed models. 
 
-### Generalized estimating equations (GEEs)
+### Generalized estimating equations 
 
-GEEs represent an alternative approach to fitting clustered, longitudinal, or otherwise correlated data; GEE fits produce estimates of the *marginal* effects (averaged across the group-level variation) rather than *conditional* effects (conditioned on group-level information) `r pkg("wgeesel")`, `r pkg("geesmv")`, `r pkg("geepack", priority = "core")`, `r pkg("gee")`, `r pkg("multgee")`  and `r pkg("geeM")`
+General estimating equations (GEEs) are an alternative approach to fitting clustered, longitudinal, or otherwise correlated data. These models produce estimates of the *marginal* effects (averaged across the group-level variation) rather than *conditional* effects (conditioned on group-level information).
+
+- `r pkg("geepack", priority = "core")`, `r pkg("gee")` and `r pkg("geeM")` are standard GEE solvers, providing GEE estimation of the parameters in mean structures with possible correlation between the outcomes. 
+- `r pkg("wgeesel")` implements a weighted extension of generalized linear models for longitudinal clustered data by incorporating the correlation within-cluster when data is missing at random. The parameters in mean, scale correlation structures are estimated based on quasi-likelihood. 
+- `r pkg("geesmv")`: GEE estimator using the original sandwich variance estimator proposed by Liang and Zeger ([1986](http://ibg.colorado.edu/cdrom2011/medland/fri2011/HWSE.pdf)), and eight types of variance estimators for improving the finite small-sample performance. 
+- `r pkg("multgee")` is a GEE solver for correlated nominal or ordinal multinomial responses using a local odds ratios parameterization.
 
 ## Specialized models
 
@@ -82,7 +97,7 @@ GEEs represent an alternative approach to fitting clustered, longitudinal, or ot
 
 ### Model diagnostics
 
-`r pkg("HLMdiag")`, `r pkg("rockchalk")`, `r pkg("influence.ME")`, `r pkg("aods3")` (overdispersion), `r pkg("DHARMa")`, `r pkg("performance")` 
+`r pkg("HLMdiag")`, `r pkg("rockchalk")`, `r pkg("influence.ME")`, `r pkg("aods3")` (overdispersion), `r pkg("DHARMa")`, `r pkg("performance")`
 
 ### Summary statistics
 
@@ -97,24 +112,21 @@ GEEs represent an alternative approach to fitting clustered, longitudinal, or ot
 
 ## Datasets
 
-`r pkg("mlmRev")`, `r pkg("lme4")`, `r pkg("nlme")`, `r pkg("SASmixed")`, `r pkg("StroupGLMM")`, `r pkg("blmeco")`, `r pkg("nlmeU")`, `r pkg("VetResearchLMM")` 
-
+`r pkg("mlmRev")`, `r pkg("lme4")`, `r pkg("nlme")`, `r pkg("SASmixed")`, `r pkg("StroupGLMM")`, `r pkg("blmeco")`, `r pkg("nlmeU")`, `r pkg("VetResearchLMM")`
 
 ## Model presentation and prediction
 
 Functions and frameworks for convenient and tabular and graphical output of mixed model results: `r pkg("effects")` `r pkg("emmeans")`, `r pkg("dotwhisker")`, `r pkg("huxtable")`, `r pkg("sjPlot")`, `r pkg("rockchalk")`
 
-
 `r pkg("broom.mixed")`, `r pkg("insight")`
- 
+
 ## Convenience wrappers
 
-These functions don't necessarily add new functionality, but 
+These functions don't necessarily add new functionality, but
 provide convenient frameworks for less experienced users to fit and interpret mixed models.
 
  `r pkg("ez")`, `r pkg("mixlm")` `r pkg("afex")`, `r pkg("RVAideMemoire")`,
 `r pkg("ZeligMultilevel")` `r pkg("cubature")`.
-
 
 ### Model and variable selection
 
@@ -144,7 +156,7 @@ provide convenient frameworks for less experienced users to fit and interpret mi
 
 `r pkg("longpower")`, `r pkg("clusterPower")`, `r pkg("powerlmm")`, `r pkg("pass.lme")`.
 
-### Off-CRAN, commercial tools, etc.
+### Off-CRAN, commercial tools, etc
 
 - **interfaces to commercial software**: `r pkg("MplusAutomation")` ([Mplus](https://www.statmodel.com/)), `r pkg("asremlPlus")` ([ASReml R](https://vsni.co.uk/software/asreml-r))
 - **off-CRAN, open source**: [INLA](http://www.r-inla.org/home)
@@ -153,13 +165,12 @@ provide convenient frameworks for less experienced users to fit and interpret mi
 #### Other
 
 The following are other packages applied in mixed models. ; `r pkg("lmeNBBayes")` `r pkg("MarginalMediation")`
-`r pkg("skewlmm")`  fits scale mixture of skew-normal linear mixed models using  expectation-maximization (EM) 
+`r pkg("skewlmm")`  fits scale mixture of skew-normal linear mixed models using  expectation-maximization (EM)
 `r pkg("mvglmmRank")` implements multivariate Generalized Linear Mixed Models for ranking sport teams
-   
+
 ## Links
 
-- [R-SIG-mixed-models mailing list](https://stat.ethz.ch/mailman/listinfo/r-sig-mixed-models) for discussion of mixed-model-related questions, course announcements, etc.. 
+- [R-SIG-mixed-models mailing list](https://stat.ethz.ch/mailman/listinfo/r-sig-mixed-models) for discussion of mixed-model-related questions, course announcements, etc..
 - [r+mixed-models tags on Stack Overflow](http://stackoverflow.com/questions/tagged/r+mixed-models)
 - [Cross Validated](http://stats.stackexchange.com)
 - [INLA](http://www.r-inla.org/home)
-
