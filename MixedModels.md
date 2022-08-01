@@ -25,7 +25,7 @@ The most commonly used packages (functions) for frequentist LMMs are `r pkg("nlm
 
 #### Bayesian 
 
-Most packages use Markov chain Monte Carlo estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")` and `r pkg("brms")`; the latter two packages are built on [Stan](mc-stan.org). `r pkg("blme")`, built on `r pkg("lme4")`, uses MAP estimation.
+Most packages use Markov chain Monte Carlo estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")` and `r pkg("brms", priority = "core")`; the latter two packages are built on [Stan](mc-stan.org). `r pkg("blme")`, built on `r pkg("lme4")`, uses MAP estimation.
     
 ### Generalized linear mixed models
 
@@ -144,10 +144,11 @@ provide convenient frameworks for less experienced users to fit and interpret mi
 
 `r pkg("longpower")`, `r pkg("clusterPower")`, `r pkg("powerlmm")`, `r pkg("pass.lme")`.
 
-### Off-CRAN and commercial tools
+### Off-CRAN, commercial tools, etc.
 
 - **interfaces to commercial software**: `r pkg("MplusAutomation")` ([Mplus](https://www.statmodel.com/)), `r pkg("asremlPlus")` ([ASReml R](https://vsni.co.uk/software/asreml-r)
 - **off-CRAN, open source**: [INLA](http://www.r-inla.org/home)
+- **tools for general-purpose latent variable/mixed modeling**: [JAGS](https://mcmc-jags.sourceforge.io/) (via `r pkg("jags")`/`r pkg("r2jags")`, [Stan](https://mc-stan.org) (via `r pkg("rstan")`), `r pkg("nimble")`, `r pkg("TMB")`, `r pkg ("greta")`
 
 #### Other
 
