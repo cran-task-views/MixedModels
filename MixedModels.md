@@ -146,7 +146,7 @@ provide convenient frameworks for less experienced users to fit and interpret mi
 
 ### Off-CRAN, commercial tools, etc.
 
-- **interfaces to commercial software**: `r pkg("MplusAutomation")` ([Mplus](https://www.statmodel.com/)), `r pkg("asremlPlus")` ([ASReml R](https://vsni.co.uk/software/asreml-r)
+- **interfaces to commercial software**: `r pkg("MplusAutomation")` ([Mplus](https://www.statmodel.com/)), `r pkg("asremlPlus")` ([ASReml R](https://vsni.co.uk/software/asreml-r))
 - **off-CRAN, open source**: [INLA](http://www.r-inla.org/home)
 - **tools for general-purpose latent variable/mixed modeling**: [JAGS](https://mcmc-jags.sourceforge.io/) (via `r pkg("jags")`/`r pkg("r2jags")`, [Stan](https://mc-stan.org) (via `r pkg("rstan")`), `r pkg("nimble")`, `r pkg("TMB")`, `r pkg ("greta")`
 
