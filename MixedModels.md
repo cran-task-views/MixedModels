@@ -76,7 +76,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 
 ## Specialized models
 
-- **Robust estimation** (downweighting the importance of extreme observations: `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")`
+- **Robust estimation** for downweighting the importance of extreme observations: `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator. 
 - **Penalized models** (regularization or variable selection by ridge/lasso/elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection.
 - **Handling missing values**: the `r pkg("mice")` package can be used to generate multiple imputation sets for use with other packages. `r pkg("mlmmm")` (EM imputation),  `r pkg("CRTgeeDR")` (GEEs )
 - **Censored data** (responses : `r pkg("brms")` (general), `r pkg("lmec")` (censored Gaussian), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors) and `r pkg("tlmec")` (censored Gaussian and t)
@@ -85,8 +85,8 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrLMM")`,`r pkg("qrNLMM")`
 - **Phylogenetic/pedigree-based models**: `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("pez")`, `r pkg("kinship2")`
 - **Survival analysis** (random effects are often referred to *frailty terms* in survival-analysis contexts): `r pkg("coxme")`
-- **Spatial models**: [INLA](http://www.r-inla.org/home), `r pkg("nlme")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes) (brms?) (See also `r view("Handling and Analyzing Spatio-Temporal Data")`)
-- **Differential equations**: `r pkg("mixedsde")`, `r pkg("nlmeODE")` `r pkg("PSM")`: see also `r view("Differential Equations")`
+- **Spatial models**: 'r github[INLA](http://www.r-inla.org/home), `r pkg("nlme")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes) (brms?) (See also `r view("Handling and Analyzing Spatio-Temporal Data")`)
+- **Differential equations**: `r pkg("mixedsde")`, `r pkg("nlmeODE")` `r pkg("PSM")`, see also `r view("Differential Equations")`
 - **Large data sets**: `r pkg("mgcv")` (`bam()`)
 - **Multinomial responses**: FIXME
 - **Longitudinal data** (FIXME, explain): `r pkg("lmeNB")`
