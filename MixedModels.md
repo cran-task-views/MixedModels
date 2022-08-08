@@ -7,47 +7,46 @@ version: 2022-07-29
 source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedModels.md
 ---
 
-**Authors**: Ben Bolker, Michael Agronah, ??  
+**Authors**: Ben Bolker, Michael Agronah, Julia Piaskowski
 
-*Mixed models* are a broad class of statistical models used to analyze data where observations can be assigned to discrete groups, and where the parameters describing the differences are treated as *random variables*. They are also described as *multilevel*, or *hierarchical*,  models; *longitudinal* data are often analyzed in this framework.  Mixed models can be fitted in either frequentist or Bayesian frameworks.
+*Mixed models* are a broad class of statistical models used to analyze data where observations can be assigned to discrete groups, and where the parameters describing the differences are treated as *random* or *latent variables*. They are also described as *multilevel*, or *hierarchical* models; *longitudinal* data are often analyzed in this framework.  Mixed models can be fitted in either frequentist or Bayesian frameworks.
 
-**Scope**: only including models that incorporate *continuous* (usually although not always Gaussian) latent variables; this excludes packages that handle hidden Markov Models, finite (discrete) mixture models, latent Markov models, etc.
+**Scope**: this view only includes models that incorporate *continuous* (usually although not always Gaussian) latent variables; this excludes packages that handle hidden Markov Models, finite (discrete) mixture models, and latent Markov models. It also excludes frameworks that handle data from a single time series, such as dynamical linear models and Kalman filtering.
 
 ## Basic model fitting
 
-This section is to describe linear mixed models (LMM) under the following assumpitions:
-    1. The responses are linear combinations of the predictor variables;
-    2. the error residuals are normally-distributed residuals;
-    3. the random effects are normally distributed.  
-
 ### Linear mixed models
+
+Linear mixed models (LMM) assume that (1) the expected values of the responses are linear combinations of the fixed-effect predictor variables and a set of random-effects (latent) variables; (2) the latent variables are normally distributed; (3) conditional on the fixed-effect and latent variables, the response variable is normally distributed.
 
 #### Frequentist
 
 The most commonly used packages and/or functions for frequentist LMMs are:
 
-- `r pkg("nlme", priority = "core")`: `nlme::lme` conducts REML or ML estimation, can include multiple nested random effects, and construction residual correlation structures for heteroscedasticity.
-- `r pkg("lme4", priority = "core")`: `lmer4::lmer`) conducts REML or ML estimation, can included multiple nested and random effects, can profile confidence intervals, and conduct parametric bootstrapping. 
+- `r pkg("nlme", priority = "core")`: `nlme::lme` fits models by restricted maximum likelihood (REML) or maximum likelihood (ML); it allows multiple nested random effects as well as correlation and heteroscedasticity in the residual variance. Inference by Wald intervals, including p-values based on an 'inner-outer' rule for denominator degrees of freedom.
+- `r pkg("lme4", priority = "core")`: `lmer4::lmer`) REML and ML estimation; allows multiple nested and crossed random effects. Inference by profile confidence intervals; p-values are available via the `r pkg("lmerTest", priority = "core")` package, or by parametric bootstrapping (`bootMer()` function or the `r pkg("pbkrtest", priority = "core")` package.
 
 #### Bayesian
 
-Most Bayesian R packages use Markov chain Monte Carlo (MCMC) estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")` and `r pkg("brms", priority = "core")`; the latter two packages uses the [Stan](mc-stan.org) infrastructure. `r pkg("blme")`, built on `r pkg("lme4")`, uses maximum a posteriori (MAP) estimation.
+Most Bayesian R packages use Markov chain Monte Carlo (MCMC) estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")` and `r pkg("brms", priority = "core")`; the latter two packages use [Stan](mc-stan.org) for estimation. `r pkg("blme")`, built on `r pkg("lme4")`, uses maximum a posteriori (MAP) estimation.
 
 ### Generalized linear mixed models
 
-Generalized linear mixed models (GLMMs) can be described as hierarchical extensions of generalized linear models (GLMs), or a extensions of LMMs to different response distributions, typically in the exponential family. The random-effect distributions are typically assumed to be Gaussian on the scale of the linear predictor.
+Generalized linear mixed models (GLMMs) are hierarchical extensions of generalized linear models (GLMs), or a extensions of LMMs to different response distributions. The assumptions are as for LMMs, but the response variable can have a broader range of conditional distributions, typically in the exponential family. 
 
 #### Frequentist
 
-- `r pkg("MASS")`: `MASS::glmmPQL` fits via penalized quasi-likelihood.
-- `r pkg("lme4")`: `lme4::glmer` does a Laplace approximation and adaptive Gauss-Hermite quadrature, and `r pkg("glmmTMB")` also does a Laplace approximation).
-- `r pkg("GLMMadaptive")` and `r pkg("hglm")` handle hierarchical GLMs.
+- `r pkg("MASS")`: `MASS::glmmPQL` fits via penalized quasi-likelihood. Built on `nlme::lme()`.
+- `r pkg("lme4")`: `lme4::glmer` fits via Laplace approximation (multiple nested and crossed REs) and adaptive Gauss-Hermite quadrature (for a single grouping variable only).
+- `r pkg("glmmTMB")`: fits via Laplace approximation. Allows zero-inflation and hurdle models and a wide range of conditional distributions, beyond the exponential family (e.g. Beta, COM-Poisson, Tweedie).
+- `r pkg("GLMMadaptive")` fits via adaptive Gauss-Hermite quadrature, for a single grouping variable. Zero-inflation and hurdle models; Beta, negative binomial, Student-t distributions; censored normal responses.
+- `r pkg("hglm")` hierarchical GLMs via H-likelihood 
 - `r pkg("lmeNB")` implements a negative binomial distribution
   
 #### Bayesian
  
 - `r pkg("MCMCglmm")` fits GLMMs using MCMC techniques. 
-- `r pkg("rstanarm")` fits GLMMs using Markov Chain Monte Carlo, variational approximations to the posterior distribution, or optimization. 
+- `r pkg("rstanarm")` fits GLMMs using MCMC, variational approximations to the posterior distribution, or optimization. 
 - `r pkg("brms")` supports a wide range of distributions and link functions for fitting GLMMs. 
 - `r pkg("glmm")` fits GLMMs using Monte Carlo Likelihood Approximation.
 - *binary data* Two packages can handle binary data. `r pkg("glmmEP")`, which handles probit models and `r pkg("GLMMRR")` which can use one of four different cumulative distribution functions. 
@@ -83,19 +82,19 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 
 - **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, `r pkg("semPLS")` and  `r pkg("blavaan")`. (See also the `r view("Psychometrics")` task view)
 
-- **kinship-augemented models**: `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`
+- **Kinship-augmented models**: `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`
 
 - **Missing values**: `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, also see the `r view("MissingData")` task view for strategies for imputing missing data
 
 - **Multinomial responses**: FIXME
 
--- **multi-trait analysis**: (multiple dependent variables) `r pkg("BMTME")`
+- **Multi-trait analysis**: (multiple dependent variables, possibly from different families) `r pkg("BMTME")`, `r pkg("MCMCglmm")`, `r pkg("brms")`
 
 - **Ordinal-valued responses**: `r pkg("ordinal")`, `r pkg("cplm")`
 
 - **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrLMM")`,`r pkg("qrNLMM")`
 
-- **Phylogenetic linear mixed models**: `r pkg("pez")`
+- **Phylogenetic linear mixed models**: `r pkg("pez")`, `r pkg("phyr")`
 
 - **Regularized/Penalized models** (regularization or variable selection by ridge, lasso, or elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection.
 
@@ -103,7 +102,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 
 - **Survival analysis**: `r pkg("coxme")`
 
-- **Spatial models**: `r github("inbo/INLA")`, `r pkg("nlme")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes), `r pkg("brms")`; also see the `r view("Spatial")` and `r view("SpatioTemporal")` CRAN task views
+- **Spatial models**: `r github("inbo/INLA")`, `r pkg("nlme")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes), `r pkg("brms")`; also see the `r view("Spatial")` and `r view("SpatioTemporal")` task views
 
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`
 
