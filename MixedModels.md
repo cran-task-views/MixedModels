@@ -42,6 +42,7 @@ Generalized linear mixed models (GLMMs) can be described as hierarchical extensi
 - `r pkg("MASS")`: `MASS::glmmPQL` fits via penalized quasi-likelihood.
 - `r pkg("lme4")`: `lme4::glmer` does a Laplace approximation and adaptive Gauss-Hermite quadrature, and `r pkg("glmmTMB")` also does a Laplace approximation).
 - `r pkg("GLMMadaptive")` and `r pkg("hglm")` handle hierarchical GLMs.
+- `r pkg("lmeNB")` implements a negative binomial distribution
   
 #### Bayesian
  
@@ -76,22 +77,37 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 
 ## Specialized models
 
-- **Robust estimation** for downweighting the importance of extreme observations: `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator. 
-- **Penalized models** (regularization or variable selection by ridge/lasso/elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection.
-- **Handling missing values**: the `r pkg("mice")` package can be used to generate multiple imputation sets for use with other packages. `r pkg("mlmmm")` (EM imputation),  `r pkg("CRTgeeDR")` (GEEs )
-- **Censored data** (responses : `r pkg("brms")` (general), `r pkg("lmec")` (censored Gaussian), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors) and `r pkg("tlmec")` (censored Gaussian and t)
-- **Ordinal-valued responses**: `r pkg("ordinal")`, `r pkg("cplm")`
-- **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`; (Bayesian): `r pkg("MCMCglmm")`, `r pkg("brms")`.
-- **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrLMM")`,`r pkg("qrNLMM")`
-- **Phylogenetic/pedigree-based models**: `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("pez")`, `r pkg("kinship2")`
-- **Survival analysis** (random effects are often referred to *frailty terms* in survival-analysis contexts): `r pkg("coxme")`
-- **Spatial models**: 'r github[INLA](http://www.r-inla.org/home), `r pkg("nlme")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes) (brms?) (See also `r view("Handling and Analyzing Spatio-Temporal Data")`)
-- **Differential equations**: `r pkg("mixedsde")`, `r pkg("nlmeODE")` `r pkg("PSM")`, see also `r view("Differential Equations")`
-- **Large data sets**: `r pkg("mgcv")` (`bam()`)
+- **Censored data**: `r pkg("brms")` (general), `r pkg("lmec")` (censored Gaussian), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors) and `r pkg("tlmec")` (censored Gaussian and Student-t distributions)
+
+- **Differential equations**: `r pkg("mixedsde")`, `r pkg("nlmeODE")` `r pkg("PSM")`, see also `r view("DifferentialEquations")`
+
+- **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, `r pkg("semPLS")` and  `r pkg("blavaan")`. (See also the `r view("Psychometrics")` task view)
+
+- **kinship-augemented models**: `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`
+
+- **Missing values**: `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, also see the `r view("MissingData")` task view for strategies for imputing missing data
+
 - **Multinomial responses**: FIXME
-- **Longitudinal data** (FIXME, explain): `r pkg("lmeNB")`
-- **Factor analytic, latent variable, and structural equation modelling**:  `r pkg("lavaan")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, `r pkg("semPLS")` and  `r pkg("blavaan")` . (See also the `r view("Psychometrics")` task view)
+
+-- **multi-trait analysis**: (multiple dependent variables) `r pkg("BMTME")`
+
+- **Ordinal-valued responses**: `r pkg("ordinal")`, `r pkg("cplm")`
+
+- **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrLMM")`,`r pkg("qrNLMM")`
+
+- **Phylogenetic linear mixed models**: `r pkg("pez")`
+
+- **Regularized/Penalized models** (regularization or variable selection by ridge, lasso, or elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection.
+
+- **Robust estimation** for downweighting the importance of extreme observations: `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator. 
+
+- **Survival analysis**: `r pkg("coxme")`
+
+- **Spatial models**: `r github("inbo/INLA")`, `r pkg("nlme")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes), `r pkg("brms")`; also see the `r view("Spatial")` and `r view("SpatioTemporal")` CRAN task views
+
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`
+
+- **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`; (Bayesian): `r pkg("MCMCglmm")`, `r pkg("brms")`
 
 ## Model diagnostics and summary statistics
 
