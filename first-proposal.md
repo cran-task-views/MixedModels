@@ -13,7 +13,7 @@
 
 ## Packages
 
-### Basic model fitting: (frequentist/LMM) `nlme`, `lme4`; (Bayesian/LMM) `MCMCglmm`, `rstanarm`, `brms`, `blme`; (frequentist/GLMM) `MASS`, `lme4`, `GLMMadaptive`, `hglm`; (Bayesian/GLMM) `MCMCglmm`, ...
+- **Basic model fitting**: (frequentist/LMM) `nlme`, `lme4`; (Bayesian/LMM) `MCMCglmm`, `rstanarm`, `brms`, `blme`; (frequentist/GLMM) `MASS`, `lme4`, `GLMMadaptive`, `hglm`; (Bayesian/GLMM) `MCMCglmm`, ...
 
 ## Overlap
 
