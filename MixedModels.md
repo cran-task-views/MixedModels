@@ -45,7 +45,6 @@ Generalized linear mixed models (GLMMs) can be described as hierarchical extensi
 - `r pkg("MASS")`: `MASS::glmmPQL()` fits via penalized quasi-likelihood.
 - `r pkg("lme4", priority = "core")`: `lme4::glmer()` does a Laplace approximation and adaptive Gauss-Hermite quadrature, and `r pkg("glmmTMB")` also does a Laplace approximation).
 - `r pkg("GLMMadaptive")` and `r pkg("hglm")` handle hierarchical GLMs.
-- `r pkg("mvglmmRank")`, multivariate generalized linear mixed models for ranking sports teams
 
 #### Bayesian
  
@@ -55,6 +54,7 @@ Generalized linear mixed models (GLMMs) can be described as hierarchical extensi
 - `r pkg("glmm")` fits GLMMs using Monte Carlo Likelihood Approximation.
 - `r pkg("MCMC.qpcr")`, quantitative RT-PCR data are fit with generalized linear mixed models and a lognormal-Poisson error distribution using MCMC
 - **binary data** Two packages can handle binary data. `r pkg("glmmEP")`, which handles probit models and `r pkg("GLMMRR")` which can use one of four different cumulative distribution functions. 
+
 ### Nonlinear mixed models
 
 Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be accommodated in the framework of GLMMs. Only a few packages can accommodate **generalized** nonlinear mixed models
@@ -80,43 +80,45 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 
 ## Specialized models
 
-- **Additive models**: `r pkg("gamm4")`, `r pkg("mgcv")`, `r pkg("brms", priority = "core")`, `r pkg("lmeSplines")`
+- **Additive models** (models incorporating smooth functional components): `r pkg("gamm4")`, `r pkg("mgcv")`, `r pkg("brms", priority = "core")`, `r pkg("lmeSplines")`
 
-- **Censored data**: `r pkg("brms", priority = "core")` (general), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors)
+- **Censored data** (response data known only up to lower/upper bounds): `r pkg("brms", priority = "core")` (general), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors)
 
-- **Differential equations**: `r pkg("mixedsde")`, see also `r view("DifferentialEquations")`
+- **Differential equations** (fitting DEs with group-structured parameters): `r pkg("mixedsde")`, see also `r view("DifferentialEquations")`
 
 - **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`. (See also the `r view("Psychometrics")` task view)
 
-- **kinship-augmented models**: `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`
+- **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`
 
 - **Missing values**: `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, also see the `r view("MissingData")` task view for strategies for imputing missing data
 
 - **Multinomial responses**: FIXME
 
--- **multi-trait analysis**: (multiple dependent variables) `r pkg("BMTME")`
+- **Multi-trait analysis**: (multiple dependent variables) `r pkg("BMTME")`, `r pkg("MCMCglmm", priority = "core")`
 
-- **Ordinal-valued responses**: `r pkg("ordinal")`, `r pkg("cplm")`
+- **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("cplm")`
 
 - **Over-dispersed models**: `r pkg("aod")`, `r pkg("aods3")`
 
 - **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrNLMM")`
 
-- **Phylogenetic linear mixed models**: `r pkg("pez")`
+- **Phylogenetic models**: `r pkg("pez")`, `r pkg("phyr")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`
 
 - **Regularized/Penalized models** (regularization or variable selection by ridge, lasso, or elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection.
 
-- **Robust estimation** for downweighting the importance of extreme observations: `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator. 
+- **Robust/heavy-tailed estimation** (downweighting the importance of extreme observations): `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator. 
 
 - **Survival analysis**: `r pkg("coxme")`
 
 - **Spatial models**: `r github("inbo/INLA")`, `r pkg("nlme", priority = "core")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes), `r pkg("brms", priority = "core")`; also see the `r view("Spatial")` and `r view("SpatioTemporal")` CRAN task views
 
-- **skewed data**: `r pkg("skewlmm")` fits scale mixture of skew-normal linear mixed models using expectation-maximization (EM)
+- **Skewed data**: `r pkg("skewlmm")` fits scale mixture of skew-normal linear mixed models using expectation-maximization (EM)
 
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`
 
 - **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`; (Bayesian): `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`
+
+- **By area**: `r pkg("mvglmmRank")`, multivariate generalized linear mixed models for ranking sports teams
 
 ## Model diagnostics and summary statistics
 
@@ -152,14 +154,15 @@ Many packages include data sets to provide examples to test package functions wi
 
 Functions and frameworks for convenient and tabular and graphical output of mixed model results: 
 
-- **Tables**: `r pkg("huxtable")`, `r pkg("broom.mixed")`, `r pkg("rockchalk")`
+- **Tables**: `r pkg("huxtable")`, `r pkg("broom.mixed", priority = "core")`, `r pkg("rockchalk")`
 - **Figures**: `r pkg("dotwhisker")`, `r pkg("sjPlot")`, `r pkg("CpGassoc")` (methylation studies), `r pkg("rockchalk")` 
+
 ## Convenience wrappers
 
 These functions provide convenient frameworks to fit and interpret mixed models.
 
 - **Model fitting**: `r pkg("multilevelmod", priority = "core")`,  `r pkg("ez")`, `r pkg("mixlm")`, `r pkg("afex")`, `r pkg("dalmatian")` (wrapper to JAGS and `r pkg("nimble")`)
-- **Model summary**: `r github("bbolker/broom.mixed")`, `r pkg("insight")`
+- **Model summary**: `r pkg("broom.mixed", priority = "core")`, `r pkg("insight")`
 - **Variable selection & Model Averaging**: `r pkg("LMERConvenienceFunctions")`, `r pkg("MuMIn")`
 
 ## Inference

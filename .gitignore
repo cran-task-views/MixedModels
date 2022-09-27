@@ -18,3 +18,5 @@ gh-pages
 notes/*.html
 bib2xhtml
 *.Rout
+MixedModels.html
+\#*
