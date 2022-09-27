@@ -7,7 +7,7 @@ version: 2022-07-29
 source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedModels.md
 ---
 
-**Authors**: Ben Bolker, Michael Agronah, ??  
+**Authors**: Ben Bolker, Michael Agronah, Julia Piaskowski
 
 *Mixed models* are a broad class of statistical models used to analyze data where observations can be assigned *a priori* to discrete groups, and where the parameters describing the differences between groups are treated as random variables. They are also described as *multilevel*, or *hierarchical*,  models; *longitudinal* data are often analyzed in this framework.  Mixed models can be fitted in either frequentist or Bayesian frameworks.
 
@@ -59,6 +59,7 @@ Generalized linear mixed models (GLMMs) can be described as hierarchical extensi
 
 Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be accommodated in the framework of GLMMs. Only a few packages can accommodate **generalized** nonlinear mixed models
 (i.e., nonlinear mixed models with non-Gaussian responses).
+
 #### Frequentist
 
 - The functions `nlme::nlme()` from `r pkg("nlme")`, `lmer4::nlmer()` from `r pkg("lme4", priority = "core")` and `GNLMM()` from `r pkg("repeated")` can conduct basic model fitting.
@@ -67,6 +68,7 @@ Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be 
 #### Bayesian
 
 - `r pkg("brms")` supports non-linear mixed models. 
+
 ### Generalized estimating equations 
 
 General estimating equations (GEEs) are an alternative approach to fitting clustered, longitudinal, or otherwise correlated data. These models produce estimates of the *marginal* effects (averaged across the group-level variation) rather than *conditional* effects (conditioned on group-level information).
@@ -115,21 +117,26 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`
 
 - **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`; (Bayesian): `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`
+
 ## Model diagnostics and summary statistics
+
 ### Model diagnostics
 
 - **general**:  `r pkg("HLMdiag")` (Diagnostic Tools for Hierarchical (Multilevel) Linear Models), `r pkg("rockchalk")`, `r pkg("performance")`, `r pkg("multilevelTools")`
 - **influential data points**: `r pkg("influence.ME")`, `r pkg("influence.SEM")`, 
 - **residuals**: `r pkg("DHARMa")`
+
 ### Summary statistics
 
 - **Correlations**:  `r pkg("iccbeta")` (intraclass correlation), `r pkg("r2glmm")` (R^2 and partial R^2),
 - **Quantitative genetics parameters**:  `r pkg("QGglmm")` )
 - **Information criteria**: `r pkg("cAIC4")` (conditional AIC) , `r pkg("blmeco")` (WAIC)
 - **robust variance-covariance estimates**: `r pkg("clubSandwich")`, `r pkg("merDeriv")`
+
 ### Derivatives
 
 - `r pkg("lmeInfo")`, `r pkg("merDeriv")`, `r pkg("lmmpar")`
+
 ## Datasets
 
 Many packages include data sets to provide examples to test package functions with (e.g. `r pkg("lme4", priority = "core")`, `r pkg("nlme", priority = "core")`). The packages listed here are previously described data sets often used in evaluating mixed models. 
@@ -154,14 +161,18 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 - **Model fitting**: `r pkg("multilevelmod", priority = "core")`,  `r pkg("ez")`, `r pkg("mixlm")`, `r pkg("afex")`, `r pkg("dalmatian")` (wrapper to JAGS and `r pkg("nimble")`)
 - **Model summary**: `r github("bbolker/broom.mixed")`, `r pkg("insight")`
 - **Variable selection & Model Averaging**: `r pkg("LMERConvenienceFunctions")`, `r pkg("MuMIn")`
+
 ## Inference
+
 ### Hypothesis testing
 
 - **fixed effects**: `r pkg("car")`, `r pkg("lmerTest")`, `r pkg("RVAideMemoire")`, `r pkg("emmeans")`, `r pkg("afex")`, `r pkg("pbkrtest")`, `r pkg("CLME")`, 
 - **random effects**: `r pkg("varTestnlme")`, `r pkg("RLRsim")`, `r pkg("mvctm")`
+
 ### Prediction and Estimation
 
 - `r pkg("emmeans")`, `r pkg("effects")`, `r pkg("margins")`, `r pkg("MarginalMediation")`
+
 ### Bootstrapping
 
 - `r pkg("pbkrtest")`, `r pkg("lme4", priority = "core")` (`lme4::bootMer()` function), `r pkg("lmeresampler")`
@@ -169,13 +180,17 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 ### Power analysis
 
 -`r pkg("longpower")`, `r pkg("clusterPower")`, `r pkg("pass.lme")`
+
 ## Other
+
 ### Commercial software interfaces
 
 - [Mplus](https://www.statmodel.com/): `r pkg("MplusAutomation")` 
 - [ASReml R](https://vsni.co.uk/software/asreml-r): `r pkg("asremlPlus")` 
 - [Phoenix NLME software](http://www.certara.com/software/pkpd-modeling-and-simulation/phoenix-nlme/): `r pkg("Phxnlme")` 
+
 ### Links
+
 #### Help
 
 - [R-SIG-mixed-models mailing list](https://stat.ethz.ch/mailman/listinfo/r-sig-mixed-models) for discussion of mixed-model-related questions, course announcements, etc..
