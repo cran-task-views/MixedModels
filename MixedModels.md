@@ -36,8 +36,6 @@ The most commonly used packages and/or functions for frequentist LMMs are:
 
 Most Bayesian R packages use Markov chain Monte Carlo (MCMC) estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")` and `r pkg("brms", priority = "core")`; the latter two packages uses the [Stan](mc-stan.org) infrastructure. `r pkg("blme")`, built on `r pkg("lme4", priority = "core")`, uses maximum a posteriori (MAP) estimation.
 
-Other packages: `r pkg("jags")`, `r pkg("bayesmix")`, `r pkg("R2jags")`, `r pkg("greta")`
-
 ### Generalized linear mixed models
 
 Generalized linear mixed models (GLMMs) can be described as hierarchical extensions of generalized linear models (GLMs), or a extensions of LMMs to different response distributions, typically in the exponential family. The random-effect distributions are typically assumed to be Gaussian on the scale of the linear predictor.
@@ -89,8 +87,6 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`. (See also the `r view("Psychometrics")` task view)
 
 - **kinship-augmented models**: `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`
-
-- **latent variable/mixed modeling**: `r pkg("jags")`, `r pkg("R2jags")`, `r pkg("rstan")`), `r pkg("nimble")`, `r pkg("TMB")`, `r pkg ("greta")`
 
 - **Missing values**: `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, also see the `r view("MissingData")` task view for strategies for imputing missing data
 
