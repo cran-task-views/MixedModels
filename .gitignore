@@ -19,4 +19,5 @@ notes/*.html
 bib2xhtml
 *.Rout
 MixedModels.html
+*.html
 \#*
