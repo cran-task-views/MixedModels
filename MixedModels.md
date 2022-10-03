@@ -15,9 +15,9 @@ source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedMo
 
 There is a large number of mixed model packages for bioinformatic applications found on [Bioconductor](https://bioconductor.org/help/search/index.html?q=mixed+models/). 
 
-## Basic model fitting
+# Basic model fitting
 
-### Linear mixed models
+## Linear mixed models
 
 Linear mixed models (LMM) make the following assumptions:
 
@@ -25,12 +25,12 @@ Linear mixed models (LMM) make the following assumptions:
 - The conditional distribution of the responses is Gaussian (equivalently, the residuals are Gaussian)
 - The random effects are normally distributed
 
-#### Frequentist
+**Frequentist**
 
 The most commonly used packages and/or functions for frequentist LMMs are:
 
 - `r pkg("nlme", priority = "core")`: `nlme::lme()` provides REML or ML estimation. Allows multiple nested random effects, and provides structures for modeling heteroscedastic and/or correlated residuals. Wald estimates of parameter uncertainty
-- `r pkg("lme4", priority = "core")`: `lmer4::lmer()`) provides REML or ML estimation. Allows multiple nested or crossed random effects, can profile confidence intervals, and conduct parametric bootstrapping. 
+- `r pkg("lme4", priority = "core")`: `lmer4::lmer()`) provides REML or ML estimation. Allows multiple nested or crossed random effects, can compute profile confidence intervals and conduct parametric bootstrapping. 
 
 #### Bayesian
 
