@@ -3,7 +3,7 @@ name: MixedModels
 topic: Mixed, multilevel, and hierarchical models in R
 maintainer: Ben Bolker, Julia Piaskowski
 e-mail: bolker@mcmaster.ca
-version: 2022-07-29
+version: 2022-10-05
 source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedModels.md
 ---
 
@@ -34,7 +34,7 @@ The most commonly used packages and/or functions for frequentist LMMs are:
 
 *Bayesian:*
 
-Most Bayesian R packages use Markov chain Monte Carlo (MCMC) estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")` and `r pkg("brms", priority = "core")`; the latter two packages uses the [Stan](mc-stan.org) infrastructure. `r pkg("blme")`, built on `r pkg("lme4", priority = "core")`, uses maximum a posteriori (MAP) estimation.
+Most Bayesian R packages use Markov chain Monte Carlo (MCMC) estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")` and `r pkg("brms", priority = "core")`; the latter two packages uses the [Stan](mc-stan.org) infrastructure. `r pkg("blme")`, built on `r pkg("lme4", priority = "core")`, uses maximum a posteriori (MAP) estimation. `r pkg("bamlss")` provides a flexible set of modular functions for Bayesian regression modelling using the JAGS infrastructure. 
 
 #### Generalized linear mixed models
 
@@ -50,7 +50,7 @@ Generalized linear mixed models (GLMMs) can be described as hierarchical extensi
  
 - `r pkg("MCMCglmm", priority = "core")` fits GLMMs using MCMC techniques. 
 - `r pkg("rstanarm")` fits GLMMs using Markov Chain Monte Carlo, variational approximations to the posterior distribution, or optimization. 
-- `r pkg("brms", priority = "core")` supports a wide range of distributions and link functions for fitting GLMMs. 
+- `r pkg("brms", priority = "core")` and `r pkg("bamlss")` support a wide range of distributions and link functions for fitting GLMMs. 
 - `r pkg("glmm")` fits GLMMs using Monte Carlo Likelihood Approximation.
 - `r pkg("MCMC.qpcr")`, quantitative RT-PCR data are fit with generalized linear mixed models and a lognormal-Poisson error distribution using MCMC
 - **binary data** Two packages can handle binary data. `r pkg("glmmEP")`, which handles probit models and `r pkg("GLMMRR")` which can use one of four different cumulative distribution functions
@@ -66,7 +66,7 @@ Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be 
 
 *Bayesian:*
 
-- `r pkg("brms")` supports non-linear mixed models 
+- `r pkg("brms")` supports non-linear mixed models; `r pkg("R2BayesX")` can model nonlinear effects of covariates uing structured additive regression (STAR) models
 
 #### Generalized estimating equations 
 
@@ -75,11 +75,11 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - `r pkg("geepack", priority = "core")`, `r pkg("gee")` and `r pkg("geeM")` are standard GEE solvers, providing GEE estimation of the parameters in mean structures with possible correlation between the outcomes 
 - `r pkg("wgeesel")` implements a weighted extension of generalized linear models for longitudinal clustered data by incorporating the correlation within-cluster when data is missing at random. The parameters in mean, scale correlation structures are estimated based on quasi-likelihood 
 - `r pkg("geesmv")`: GEE estimator using the original sandwich variance estimator proposed by Liang and Zeger ([1986](http://ibg.colorado.edu/cdrom2011/medland/fri2011/HWSE.pdf)), and eight types of variance estimators for improving the finite small-sample performance. 
-- `r pkg("multgee")` is a GEE solver for correlated nominal or ordinal multinomial responses using a local odds ratios parameterization
+- `r pkg("multgee")` is a GEE solver for correlated nominal or ordinal multinomial responses using a local odƒds ratios parameterization
 
 ### Specialized models
 
-- **Additive models** (models incorporating smooth functional components): `r pkg("gamm4")`, `r pkg("mgcv")`, `r pkg("brms", priority = "core")`, `r pkg("lmeSplines")`
+- **Additive models** (models incorporating smooth functional components): `r pkg("gamm4")`, `r pkg("mgcv")`, `r pkg("brms", priority = "core")`, `r pkg("lmeSplines")`, `r pkg("bamlss")`, `r pkg("gamlss")`, `r github("Biometris/LMMsolver")`, `r pkg("R2BayesX")`
 
 - **Censored data** (response data known only up to lower/upper bounds): `r pkg("brms", priority = "core")` (general), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors)
 
@@ -87,11 +87,11 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 
 - **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`. (See also the `r view("Psychometrics")` task view)
 
-- **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`
+- **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`
 
 - **Missing values**: `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, also see the `r view("MissingData")` task view for strategies for imputing missing data
 
-- **Multinomial responses**: FIXME
+- **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`
 
 - **Multi-trait analysis**: (multiple dependent variables) `r pkg("BMTME")`, `r pkg("MCMCglmm", priority = "core")`
 
@@ -103,13 +103,15 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 
 - **Phylogenetic models**: `r pkg("pez")`, `r pkg("phyr")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`
 
-- **Regularized/penalized models** (regularization or variable selection by ridge, lasso, or elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection
+- **Regularized/penalized models** (regularization or variable selection by ridge, lasso, or elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection. `r pkg("bamlss")` implements LASSO-like penalisation for generalised additive models 
 
 - **Robust/heavy-tailed estimation** (downweighting the importance of extreme observations): `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator
 
 - **Survival analysis**: `r pkg("coxme")`
 
-- **Spatial models**: `r github("inbo/INLA")`, `r pkg("nlme", priority = "core")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes), `r pkg("brms", priority = "core")`; also see the `r view("Spatial")` and `r view("SpatioTemporal")` CRAN task views
+- **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`
+
+- **Spatial models**: `r github("inbo/INLA")`, `r pkg("nlme", priority = "core")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes), `r pkg("brms", priority = "core")`, `r github("Biometris/LMMsolver")`; also see the `r view("Spatial")` and `r view("SpatioTemporal")` CRAN task views
 
 - **Skewed data**: `r pkg("skewlmm")` fits scale mixture of skew-normal linear mixed models using expectation-maximization (EM)
 
