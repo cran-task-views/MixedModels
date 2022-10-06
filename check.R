@@ -25,6 +25,14 @@ if (any(packagesIssues)) {
   print(packages[packagesIssues])
 }
 
+message("Checking Date...")
+date_node <- xml_find_all(xml, "//meta[@name='DC.issued']")
+sprintf("Today is %s", Sys.Date())
+sprintf("This was last updated %s", xml_attr(date_node, "content"))
+if (Sys.Date() != xml_attr(date_node, "content")) {
+  warning("Don't forget to update the version", call. = FALSE, immediate. = TRUE)
+}
+
 
 message("Checking URLs...")
 
@@ -38,7 +46,7 @@ for(i in 1:length(urls)) {
   url_test[i] = try(http_error(urls[i], config(ssl_verifypeer = 0L, ssl_verifyhost = 0L)))
 }
 
-url_test <- sapply(urls, try(http_error), config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
+#url_test <- sapply(urls, try(http_error), config(ssl_verifypeer = 0L, ssl_verifyhost = 0L))
 
 # sometimes links come up error when they do work fine: 
   # (update as needed)
@@ -50,12 +58,5 @@ cat("here are the URL's with error messages:\n")
 urls[grep("^Error.", url_test)] 
 
 
-message("Checking Date...")
-date_node <- xml_find_all(xml, "//meta[@name='DC.issued']")
-sprintf("Today is %s", Sys.Date())
-sprintf("This was last updated %s", xml_attr(date_node, "content"))
-if (Sys.Date() != xml_attr(date_node, "content")) {
-  warning("Don't forget to update the version", call. = FALSE, immediate. = TRUE)
-}
 
 

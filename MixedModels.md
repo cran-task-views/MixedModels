@@ -3,7 +3,7 @@ name: MixedModels
 topic: Mixed, multilevel, and hierarchical models in R
 maintainer: Ben Bolker, Julia Piaskowski
 e-mail: bolker@mcmaster.ca
-version: 2022-07-29
+version: 2022-10-05
 source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedModels.md
 ---
 
