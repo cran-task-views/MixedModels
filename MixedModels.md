@@ -202,6 +202,8 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 - Other software: [assist](https://yuedong.faculty.pstat.ucsb.edu/software.html)
 - Other software: [INLA](http://www.r-inla.org/home)
 - Other software: [Zelig Project](https://zeligproject.org/)
+- Other software: [MixWild/MixRegLS](https://voices.uchicago.edu/hedeker/mixwild_mixregls/) for scale-location modeling
+- Other software: [MixedModels.jl](https://github.com/JuliaStats/MixedModels.jl) for mixed models in Julia
 - Book: *[SAS System for Mixed Models](https://v8doc.sas.com/sashtml/hrddoc/indfiles/55235.htm)*
 - Book: *[Generalized Linear Mixed Models](https://www.taylorfrancis.com/books/mono/10.1201/b13151/generalized-linear-mixed-models-walter-stroup)*
 - Book: *[Bayesian Data Analysis in Ecology using R, BUGS and Stan](https://www.elsevier.com/books/bayesian-data-analysis-in-ecology-using-linear-models-with-r-bugs-and-stan/korner-nievergelt/978-0-12-801370-0)* 
