@@ -39,7 +39,7 @@ Most Bayesian R packages use Markov chain Monte Carlo (MCMC) estimation: `r pkg(
 
 #### Generalized linear mixed models
 
-sGeneralized linear mixed models (GLMMs) can be described as hierarchical extensions of generalized linear models (GLMs), or as extensions of LMMs to different response distributions, typically in the exponential family. The random-effect distributions are typically assumed to be Gaussian on the scale of the linear predictor.
+Generalized linear mixed models (GLMMs) can be described as hierarchical extensions of generalized linear models (GLMs), or as extensions of LMMs to different response distributions, typically in the exponential family. The random-effect distributions are typically assumed to be Gaussian on the scale of the linear predictor.
 
 *Frequentist:*
 
