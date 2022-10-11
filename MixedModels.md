@@ -30,7 +30,8 @@ Linear mixed models (LMM) make the following assumptions:
 The most commonly used packages and/or functions for frequentist LMMs are:
 
 - `r pkg("nlme", priority = "core")`: `nlme::lme()` provides REML or ML estimation. Allows multiple nested random effects, and provides structures for modeling heteroscedastic and/or correlated residuals. Wald estimates of parameter uncertainty
-- `r pkg("lme4", priority = "core")`: `lmer4::lmer()`) provides REML or ML estimation. Allows multiple nested or crossed random effects, can compute profile confidence intervals and conduct parametric bootstrapping. 
+- `r pkg("lme4", priority = "core")`: `lmer4::lmer()`) provides REML or ML estimation. Allows multiple nested or crossed random effects, can compute profile confidence intervals and conduct parametric bootstrapping.
+- `r pkg("mbest")`: fits large nested LMMs using a fast moment-based approach.
 
 *Bayesian:*
 
@@ -44,11 +45,12 @@ Generalized linear mixed models (GLMMs) can be described as hierarchical extensi
 
 - `r pkg("MASS")`: `MASS::glmmPQL()` fits via penalized quasi-likelihood.
 - `r pkg("lme4", priority = "core")`: `lme4::glmer()` uses Laplace approximation and adaptive Gauss-Hermite quadrature; fits negative binomial as well as exponential-family models
-- `r pkg("glmmTMB")` uses Laplace approximation; allows some correlation structures; fits some non-exponential families (Beta, COM-Poisson, etc.) and zero-inflated/hurdle models
+- `r pkg("glmmTMB", priority = "core")` uses Laplace approximation; allows some correlation structures; fits some non-exponential families (Beta, COM-Poisson, etc.) and zero-inflated/hurdle models
 - `r pkg("GLMMadaptive")` uses adaptive Gauss-Hermite quadrature; fits exponential family, negative binomial, beta, zero-inflated/hurdle/censored Gaussian models, user-specified log-densities
 - `r pkg("hglm")` fit hierarchical GLMs using $h$-likelihood (*sensu* Lee and Nelder)
 - `r pkg("glmm")` fits GLMMs using Monte Carlo Likelihood approximation.
 - `r pkg("glmmEP")` fits probit mixed models for binary data by expectation propagation.
+- `r pkg("mbest")`: fits large nested GLMMs using a fast moment-based approach.
 
 *Bayesian:*
 
@@ -91,12 +93,13 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 ### Specialized models
 
 - **Additive models** (models incorporating smooth functional components such as regression splines or Gaussian processes ): `r pkg("gamm4")`, `r pkg("mgcv")`, `r pkg("brms", priority = "core")`, `r pkg("lmeSplines")`, `r pkg("bamlss")`, `r pkg("gamlss")`, `r github("Biometris/LMMsolver")`, `r pkg("R2BayesX")`, `r pkg("GLMMRR")`
-- **Censored data** (response data known only up to lower/upper bounds): `r pkg("brms", priority = "core")` (general), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors). Censored Gaussian (Tobit) responses: `r pkg("GLMMadaptive")`, `r pkg("MCMCglmm")`, `r pkg("gamlss")`
+- **Censored data** (response data known only up to lower/upper bounds): `r pkg("brms", priority = "core")` (general), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors). Censored Gaussian (Tobit) responses: `r pkg("GLMMadaptive")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("gamlss")`
 - **Differential equations** (fitting DEs with group-structured parameters): `r pkg("mixedsde")`, see also `r view("DifferentialEquations")`
 - **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`. (See also the `r view("Psychometrics")` task view)
-- **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`, `r pkg("MCMCglmm")`
-- **Missing values**: `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, also see the `r view("MissingData")` task view for strategies for imputing missing data
-- **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`, `r pkg("MCMCglmm")`
+- **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`, `r pkg("MCMCglmm", priority = "core")`
+- **Location-scale models**: `r pkg("nlme", priority = "core")`, `r pkg("glmmTMB", priority = "core")`, and `r pkg("brms", priority = "core")` all allow modeling of the dispersion/scale component
+- **Missing values**: `r pkg("mice")`, `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`; also see the `r view("MissingData")` task view for strategies for imputing missing data
+- **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`, `r pkg("MCMCglmm", priority = "core")`
 - **Multi-trait analysis**: (multiple dependent variables) `r pkg("BMTME")`, `r pkg("MCMCglmm", priority = "core")`
 - **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("cplm")`
 - **Over-dispersed models**: `r pkg("aod")`, `r pkg("aods3")`
@@ -148,7 +151,7 @@ Many packages include data sets to provide examples to test package functions wi
 
 Functions and frameworks for convenient and tabular and graphical output of mixed model results: 
 
-- **Tables**: `r pkg("huxtable")`, `r pkg("broom.mixed", priority = "core")`, `r pkg("rockchalk")`
+- **Tables**: `r pkg("huxtable")`, `r pkg("broom.mixed", priority = "core")`, `r pkg("rockchalk")`, `r pkg("parameters")`, `r pkg("modelsummary")`
 - **Figures**: `r pkg("dotwhisker")`, `r pkg("sjPlot")`, `r pkg("CpGassoc")` (methylation studies), `r pkg("rockchalk")` 
 
 ### Convenience wrappers
@@ -157,7 +160,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 - **Model fitting**: `r pkg("multilevelmod", priority = "core")`,  `r pkg("ez")`, `r pkg("mixlm")`, `r pkg("afex")`, `r pkg("dalmatian")` (wrapper to JAGS and `r pkg("nimble")`)
 - **Model summary**: `r pkg("broom.mixed", priority = "core")`, `r pkg("insight")`
-- **Variable selection & model averaging**: `r pkg("LMERConvenienceFunctions")`, `r pkg("MuMIn")`
+- **Variable selection & model averaging**: `r pkg("LMERConvenienceFunctions")`, `r pkg("MuMIn")`, `r pkg("glmulti")` (see e.g. [maintainer's blog](https://vcalcagnoresearch.wordpress.com/package-glmulti/) or [here](https://gist.github.com/bbolker/4ae3496c0ddf99ea2009a22b94aecbe5) for use with mixed models)
 
 ### Model selection and Inference
 
@@ -168,7 +171,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 #### Prediction and estimation
 
-- `r pkg("emmeans")`, `r pkg("effects")`, `r pkg("margins")`, `r pkg("MarginalMediation")`
+- `r pkg("emmeans")`, `r pkg("effects")`, `r pkg("margins")`, `r pkg("MarginalMediation")`, `r pkg("marginaleffects")`
 
 #### Bootstrapping
 
