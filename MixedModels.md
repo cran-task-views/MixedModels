@@ -9,7 +9,7 @@ source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedMo
 
 **Authors**: Ben Bolker, Michael Agronah, Julia Piaskowski
 
-*Mixed models* are a broad class of statistical models used to analyze data where observations can be assigned *a priori* to discrete groups, and where the parameters describing the differences between groups are treated as random variables. They are also described as *multilevel*, or *hierarchical*,  models; *longitudinal* data are often analyzed in this framework. Mixed models can be fitted in either frequentist or Bayesian frameworks.
+*Mixed models* are a broad class of statistical models used to analyze data where observations can be assigned *a priori* to discrete groups, and where the parameters describing the differences between groups are treated as random variables. They are also described as *mixed-effects*, *multilevel*, or *hierarchical*, models; *longitudinal* data are often analyzed in this framework. In econometrics, longitudinal or cross-sectional time series data are often referred to as *panel data* and classes of model to analyse this data, referred to as *panel data models*, can be also considered as mixed models.  Mixed models can be fitted in either frequentist or Bayesian frameworks.
 
 **Scope**: only including models that incorporate *continuous* (usually although not always Gaussian) latent variables; this excludes packages that handle hidden Markov Models, finite (discrete) mixture models, latent Markov models, etc.
 
