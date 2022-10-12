@@ -39,7 +39,7 @@ Most Bayesian R packages use Markov chain Monte Carlo (MCMC) estimation: `r pkg(
 
 #### Generalized linear mixed models
 
-Generalized linear mixed models (GLMMs) can be described as hierarchical extensions of generalized linear models (GLMs), or an extensions of LMMs to different response distributions, typically in the exponential family. The random-effect distributions are typically assumed to be Gaussian on the scale of the linear predictor.
+Generalized linear mixed models (GLMMs) can be described as hierarchical extensions of generalized linear models (GLMs), or as extensions of LMMs to different response distributions, typically in the exponential family. The random-effect distributions are typically assumed to be Gaussian on the scale of the linear predictor.
 
 *Frequentist:*
 
@@ -104,7 +104,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Over-dispersed models**: `r pkg("aod")`, `r pkg("aods3")`
 - **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrNLMM")`
 - **Phylogenetic models**: `r pkg("pez")`, `r pkg("phyr")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`
-- **Regularized/penalized models** (regularization or variable selection by ridge, lasso, or elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection. `r pkg("bamlss")` implements LASSO-like penalisation for generalised additive models
+- **Regularized/penalized models** (regularization or variable selection by ridge, lasso, or elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection. `r pkg("glmmLasso")` fits GLMMs with L1-penalized (LASSO) fixed effects.  `r pkg("bamlss")` implements LASSO-like penalisation for generalised additive models
 - **Robust/heavy-tailed estimation** (downweighting the importance of extreme observations): `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator. Some packages (`r pkg("brms", priority = "core")`, `r pkg("bamlss")`, `r pkg("mgcv")` with `family = "scat"`) allow heavy-tailed response distributions such as Student-$t$
 - **Survival analysis**: `r pkg("coxme")`
 - **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`
@@ -145,6 +145,7 @@ Many packages include data sets to provide examples to test package functions wi
 - `r pkg("blmeco")`: Data and functions accompanying *[Bayesian Data Analysis in Ecology using R, BUGS and Stan](https://www.elsevier.com/books/bayesian-data-analysis-in-ecology-using-linear-models-with-r-bugs-and-stan/korner-nievergelt/978-0-12-801370-0)*
 - `r pkg("nlmeU")`: Data sets, functions and scripts described in *[Linear Mixed-Effects Models: A Step-by-Step Approach](https://link.springer.com/book/10.1007/978-1-4614-3900-4)*
 - `r pkg("VetResearchLMM")`: R scripts and data sets for *[Linear Mixed Models. An Introduction with applications in Veterinary Research](https://www.ilri.org/publications/linear-mixed-model-introduction-applications-veterinary-research)*
+- `r pkg("languageR")`: R scripts and a datasets for *[Analyzing Linguistic Data: A practical introduction to statistics using R](https://doi.org/10.1017/CBO9780511801686)*
 
 ### Model presentation and prediction
 
@@ -178,7 +179,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 #### Power analysis
 
-- `r pkg("longpower")`, `r pkg("clusterPower")`, `r pkg("pass.lme")`
+- `r pkg("longpower")`, `r pkg("clusterPower")`, `r pkg("pass.lme")`, `r pkg("simr")`
 
 #### Model selection
 
@@ -208,5 +209,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 - Book: *[Generalized Linear Mixed Models](https://www.taylorfrancis.com/books/mono/10.1201/b13151/generalized-linear-mixed-models-walter-stroup)*
 - Book: *[Bayesian Data Analysis in Ecology using R, BUGS and Stan](https://www.elsevier.com/books/bayesian-data-analysis-in-ecology-using-linear-models-with-r-bugs-and-stan/korner-nievergelt/978-0-12-801370-0)*
 - Book: *[Linear Mixed-Effects Models: A Step-by-Step Approach](https://link.springer.com/book/10.1007/978-1-4614-3900-4)*
+- Book: *[Mixed Effects Models and Extensions in Ecology with R](https://link.springer.com/book/10.1007/978-0-387-87458-6)*
+- Online Book: *[Embrace Uncertainty: Mixed-effects models with Julia](https://juliamixedmodels.github.io/EmbraceUncertainty/)*
 
 ---
