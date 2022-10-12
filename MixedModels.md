@@ -120,7 +120,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 
 #### Model diagnostics
 
-- **general**: `r pkg("HLMdiag")` (diagnostic tools for hierarchical (multilevel) linear models), `r pkg("rockchalk")`, `r pkg("performance")`, `r pkg("multilevelTools")`
+- **general**: `r pkg("HLMdiag")` (diagnostic tools for hierarchical (multilevel) linear models), `r pkg("rockchalk")`, `r pkg("performance")`, `r pkg("multilevelTools")`, `r pkg("merTools")` (for models fitted using `lme4`)
 - **influential data points**: `r pkg("influence.ME")`, `r pkg("influence.SEM")`
 - **residuals**: `r pkg("DHARMa")`
 
