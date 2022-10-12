@@ -179,7 +179,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 #### Power analysis
 
-- `r pkg("longpower")`, `r pkg("clusterPower")`, `r pkg("pass.lme")`
+- `r pkg("longpower")`, `r pkg("clusterPower")`, `r pkg("pass.lme")`, `r pkg("simr")`
 
 #### Model selection
 
@@ -209,5 +209,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 - Book: *[Generalized Linear Mixed Models](https://www.taylorfrancis.com/books/mono/10.1201/b13151/generalized-linear-mixed-models-walter-stroup)*
 - Book: *[Bayesian Data Analysis in Ecology using R, BUGS and Stan](https://www.elsevier.com/books/bayesian-data-analysis-in-ecology-using-linear-models-with-r-bugs-and-stan/korner-nievergelt/978-0-12-801370-0)*
 - Book: *[Linear Mixed-Effects Models: A Step-by-Step Approach](https://link.springer.com/book/10.1007/978-1-4614-3900-4)*
+- Book: *[Mixed Effects Models and Extensions in Ecology with R](https://link.springer.com/book/10.1007/978-0-387-87458-6)*
+- Online Book: *[Embrace Uncertainty: Mixed-effects models with Julia](https://juliamixedmodels.github.io/EmbraceUncertainty/)*
 
 ---
