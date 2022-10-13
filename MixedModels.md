@@ -15,7 +15,7 @@ source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedMo
 
 **Scope**: only including models that incorporate *continuous* (usually although not always Gaussian) latent variables; this excludes packages that handle hidden Markov Models, finite (discrete) mixture models, latent Markov models, etc.
 
-There is a large number of mixed model packages for bioinformatic applications found on [Bioconductor](https://bioconductor.org/help/search/index.html?q=mixed+models/).
+[Bioconductor](https://bioconductor.org/) hosts many packages for bioinformatic applications of mixed models; see [here](https://bioconductor.org/help/search/index.html?q="mixed+models"/).
 
 ### Basic model fitting
 
@@ -117,7 +117,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Skewed data**: `r pkg("skewlmm")` fits a scale mixture of skew-normal linear mixed models using expectation-maximization (EM)
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`
 - **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`; (Bayesian): `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("bamlss")`, `r pkg("mgcv")` (zi Poisson only)
-- **Bioinformatics models**: `r pkg("MCMC.qpcr")`
+- **Bioinformatics/quantitative genetics**: `r pkg("MCMC.qpcr")`, `r pkg("QGglmm")`, `r pkg("CpGassoc")` (methylation studies),
 - **By area**:
     * `r pkg("mvglmmRank")`, multivariate generalized linear mixed models for ranking sports teams
 
@@ -140,7 +140,6 @@ These packages do not directly provide functions to fit mixed models, but instea
 #### Summary statistics
 
 - **Correlations**:  `r pkg("iccbeta")` (intraclass correlation), `r pkg("r2glmm")` (R^2 and partial R^2)
-- **Quantitative genetics parameters**:  `r pkg("QGglmm")` )
 - **Information criteria**: `r pkg("cAIC4")` (conditional AIC) , `r pkg("blmeco")` (WAIC)
 - **Robust variance-covariance estimates**: `r pkg("clubSandwich")`, `r pkg("merDeriv")`
 
@@ -165,7 +164,7 @@ Many packages include small example data sets (e.g., `r pkg("lme4", priority = "
 Functions and frameworks for convenient and tabular and graphical output of mixed model results:
 
 - **Tables**: `r pkg("huxtable")`, `r pkg("broom.mixed", priority = "core")`, `r pkg("rockchalk")`, `r pkg("parameters")`, `r pkg("modelsummary")`
-- **Figures**: `r pkg("dotwhisker")`, `r pkg("sjPlot")`, `r pkg("CpGassoc")` (methylation studies), `r pkg("rockchalk")`
+- **Figures**: `r pkg("dotwhisker")`, `r pkg("sjPlot")`, `r pkg("rockchalk")`
 
 ### Convenience wrappers
 
