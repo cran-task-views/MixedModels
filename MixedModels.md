@@ -7,7 +7,9 @@ version: 2022-10-05
 source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedModels.md
 ---
 
-**Authors**: Ben Bolker, Michael Agronah, Julia Piaskowski
+**Co-maintainers**: Ben Bolker, Julia Piaskowski, Emi Tanaka, Philip Allday, Wolfgang Viechtbauer
+**Contributors**: Ben Bolker, Michael Agronah, Julia Piaskowski, Emi Tanaka, Philip Allday, Wolfgang Viechtbauer
+
 
 *Mixed models* are a broad class of statistical models used to analyze data where observations can be assigned *a priori* to discrete groups, and where the parameters describing the differences between groups are treated as random variables. They are also described as *mixed-effects*, *multilevel*, or *hierarchical*, models; *longitudinal* data are often analyzed in this framework. In econometrics, longitudinal or cross-sectional time series data are often referred to as *panel data* and classes of model to analyse this data, referred to as *panel data models*, can be also considered as mixed models.  Mixed models can be fitted in either frequentist or Bayesian frameworks.
 
@@ -47,7 +49,7 @@ Generalized linear mixed models (GLMMs) can be described as hierarchical extensi
 - `r pkg("lme4", priority = "core")`: `lme4::glmer()` uses Laplace approximation and adaptive Gauss-Hermite quadrature; fits negative binomial as well as exponential-family models.
 - `r pkg("glmmTMB", priority = "core")` uses Laplace approximation; allows some correlation structures; fits some non-exponential families (Beta, COM-Poisson, etc.) and zero-inflated/hurdle models.
 - `r pkg("GLMMadaptive")` uses adaptive Gauss-Hermite quadrature; fits exponential family, negative binomial, beta, zero-inflated/hurdle/censored Gaussian models, user-specified log-densities.
-- `r pkg("hglm")` fit hierarchical GLMs using $h$-likelihood (*sensu* Lee and Nelder).
+- `r pkg("hglm")` fits hierarchical GLMs using $h$-likelihood (*sensu* Lee and Nelder).
 - `r pkg("glmm")` fits GLMMs using Monte Carlo likelihood approximation.
 - `r pkg("glmmEP")` fits probit mixed models for binary data by expectation propagation.
 - `r pkg("mbest")`: fits large nested GLMMs using a fast moment-based approach.
@@ -92,6 +94,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 ### Specialized models
 
 - **Additive models** (models incorporating smooth functional components such as regression splines or Gaussian processes ): `r pkg("gamm4")`, `r pkg("mgcv")`, `r pkg("brms", priority = "core")`, `r pkg("lmeSplines")`, `r pkg("bamlss")`, `r pkg("gamlss")`, `r github("Biometris/LMMsolver")`, `r pkg("R2BayesX")`, `r pkg("GLMMRR")`
+- **Big data/distributed computation**: `r pkg("lmmpar")`, `r pkg("mbest")`. See also [MixedModels.jl](https://juliastats.org/MixedModels.jl/dev/) (Julia), [diamond](https://github.com/stitchfix/diamond) (Python)
 - **Censored data** (response data known only up to lower/upper bounds): `r pkg("brms", priority = "core")` (general), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors). Censored Gaussian (Tobit) responses: `r pkg("GLMMadaptive")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("gamlss")`
 - **Differential equations** (fitting DEs with group-structured parameters): `r pkg("mixedsde")`, see also `r view("DifferentialEquations")`
 - **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`. (See also the `r view("Psychometrics")` task view)
@@ -114,9 +117,17 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Skewed data**: `r pkg("skewlmm")` fits a scale mixture of skew-normal linear mixed models using expectation-maximization (EM)
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`
 - **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`; (Bayesian): `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("bamlss")`, `r pkg("mgcv")` (zi Poisson only)
+- **Bioinformatics models**: `r pkg("MCMC.qpcr")`
 - **By area**:
     * `r pkg("mvglmmRank")`, multivariate generalized linear mixed models for ranking sports teams
-	* `r pkg("MCMC.qpcr")`, fitting quantitative RT-PCR data
+
+### Hierarchical modeling frameworks
+
+These packages do not directly provide functions to fit mixed models, but instead implement interfaces to general-purpose sampling and optimization toolboxes that can be used to fit mixed models. While models require extra effort to set up, and often require programming in a domain-specific language other than R, these frameworks are more flexible than most of the other packages listed here.
+
+* Interfaces to [JAGS](https://mcmc-jags.sourceforge.io/)/[OpenBUGS](https://www.mrc-bsu.cam.ac.uk/software/bugs/openbugs/): `r pkg("R2jags")`, `r pkg("rjags")`, `r pkg("R2OpenBUGS")` (BUGS language)
+* Interfaces to [Stan](http://mc-stan.org) (C++ extensions): `r pkg("rstan")`, `r pkg("cmdstanr")`, `r github("rmcelreath/rethinking")`
+* Other frameworks: `r pkg("TMB")` (automatic differentiation and Laplace approximation) (C++ extensions), `r pkg("tmbstan")`, `r pkg("nimble")`, `r pkg("greta")` (R interface to TensorFlow)
 
 ### Model diagnostics and summary statistics
 
@@ -135,11 +146,11 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 
 #### Derivatives
 
-- `r pkg("lmeInfo")`, `r pkg("merDeriv")`, `r pkg("lmmpar")`
+- `r pkg("lmeInfo")`, `r pkg("merDeriv")` 
 
 ### Data sets
 
-Many packages include data sets to provide examples to test package functions with (e.g., `r pkg("lme4", priority = "core")`, `r pkg("nlme", priority = "core")`). The packages listed here are previously described data sets often used in evaluating mixed models.
+Many packages include small example data sets (e.g., `r pkg("lme4", priority = "core")`, `r pkg("nlme", priority = "core")`). These packages provide previously described data sets often used in evaluating mixed models.
 
 - `r pkg("mlmRev")`: examples from the Multilevel Software Comparative Reviews
 - `r pkg("SASmixed")`: data sets from *[SAS System for Mixed Models](https://v8doc.sas.com/sashtml/hrddoc/indfiles/55235.htm)*
@@ -147,7 +158,7 @@ Many packages include data sets to provide examples to test package functions wi
 - `r pkg("blmeco")`: Data and functions accompanying *[Bayesian Data Analysis in Ecology using R, BUGS and Stan](https://www.elsevier.com/books/bayesian-data-analysis-in-ecology-using-linear-models-with-r-bugs-and-stan/korner-nievergelt/978-0-12-801370-0)*
 - `r pkg("nlmeU")`: Data sets, functions and scripts described in *[Linear Mixed-Effects Models: A Step-by-Step Approach](https://link.springer.com/book/10.1007/978-1-4614-3900-4)*
 - `r pkg("VetResearchLMM")`: R scripts and data sets for *[Linear Mixed Models. An Introduction with applications in Veterinary Research](https://www.ilri.org/publications/linear-mixed-model-introduction-applications-veterinary-research)*
-- `r pkg("languageR")`: R scripts and a datasets for *[Analyzing Linguistic Data: A practical introduction to statistics using R](https://doi.org/10.1017/CBO9780511801686)*
+- `r pkg("languageR")`: R scripts and data sets for *[Analyzing Linguistic Data: A practical introduction to statistics using R](https://doi.org/10.1017/CBO9780511801686)*
 
 ### Model presentation and prediction
 
@@ -200,7 +211,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 - Help: [R-SIG-mixed-models mailing list](https://stat.ethz.ch/mailman/listinfo/r-sig-mixed-models) for discussion of mixed-model-related questions, course announcements, etc..
 - Help: [[r] + [mixed-models] tags on Stack Overflow](http://stackoverflow.com/questions/tagged/r+mixed-models)
 - Help: [Cross Validated](http://stats.stackexchange.com)
-- Other software: [ASReml-R](https://vsni.co.uk/software/asreml-r)
+- Other software: [ASReml-R](https://vsni.co.uk/software/asreml-r) (`r pkg("asremlPlus")`)
 - Other software: [assist](https://yuedong.faculty.pstat.ucsb.edu/software.html)
 - Other software: [INLA](http://www.r-inla.org/home)
 - Other software: [Zelig Project](https://zeligproject.org/)
