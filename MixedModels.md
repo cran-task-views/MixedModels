@@ -1,13 +1,13 @@
 ---
 name: MixedModels
 topic: Mixed, multilevel, and hierarchical models in R
-maintainer: Ben Bolker, Julia Piaskowski, Emi Tanaka, Philip Allday, Wolfgang Viechtbauer
+maintainer: Ben Bolker, Julia Piaskowski, Emi Tanaka, Phillip Alday, Wolfgang Viechtbauer
 e-mail: bolker@mcmaster.ca
 version: 2022-10-15
 source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedModels.md
 ---
 
-**Contributors**: Ben Bolker, Michael Agronah, Julia Piaskowski, Emi Tanaka, Philip Allday, Wolfgang Viechtbauer
+**Contributors**: Ben Bolker, Michael Agronah, Julia Piaskowski, Emi Tanaka, Phillip Alday, Wolfgang Viechtbauer
 
 
 *Mixed* (or *mixed-effect*) *models* are a broad class of statistical models used to analyze data where observations can be assigned *a priori* to discrete groups, and where the parameters describing the differences between groups are treated as random (or *latent*) variables. They are one category of *multilevel*, or *hierarchical* models; *longitudinal* data are often analyzed in this framework. In econometrics, longitudinal or cross-sectional time series data are often referred to as *panel data* and are sometimes fitted with mixed models.  Mixed models can be fitted in either frequentist or Bayesian frameworks.
