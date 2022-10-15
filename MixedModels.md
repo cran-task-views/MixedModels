@@ -3,7 +3,7 @@ name: MixedModels
 topic: Mixed, multilevel, and hierarchical models in R
 maintainer: Ben Bolker, Julia Piaskowski, Emi Tanaka, Philip Allday, Wolfgang Viechtbauer
 e-mail: bolker@mcmaster.ca
-version: 2022-10-05
+version: 2022-10-15
 source: https://github.com/bbolker/mixedmodels-misc/blob/master/taskview/MixedModels.md
 ---
 
@@ -155,7 +155,7 @@ Many packages include small example data sets (e.g., `r pkg("lme4", priority = "
 - `r pkg("StroupGLMM")`: R scripts and data sets for *[Generalized Linear Mixed Models](https://www.taylorfrancis.com/books/mono/10.1201/b13151/generalized-linear-mixed-models-walter-stroup)*
 - `r pkg("blmeco")`: Data and functions accompanying *[Bayesian Data Analysis in Ecology using R, BUGS and Stan](https://www.elsevier.com/books/bayesian-data-analysis-in-ecology-using-linear-models-with-r-bugs-and-stan/korner-nievergelt/978-0-12-801370-0)*
 - `r pkg("nlmeU")`: Data sets, functions and scripts described in *[Linear Mixed-Effects Models: A Step-by-Step Approach](https://link.springer.com/book/10.1007/978-1-4614-3900-4)*
-- `r pkg("VetResearchLMM")`: R scripts and data sets for *[Linear Mixed Models. An Introduction with applications in Veterinary Research](https://www.ilri.org/publications/linear-mixed-model-introduction-applications-veterinary-research)*
+- `r pkg("VetResearchLMM")`: R scripts and data sets for *[Linear Mixed Models. An Introduction with applications in Veterinary Research](https://hdl.handle.net/10568/5379)*
 - `r pkg("languageR")`: R scripts and data sets for *[Analyzing Linguistic Data: A practical introduction to statistics using R](https://doi.org/10.1017/CBO9780511801686)*
 
 ### Model presentation and prediction
