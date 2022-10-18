@@ -35,7 +35,7 @@ The most commonly used packages and/or functions for frequentist LMMs are:
 
 *Bayesian:*
 
-Most Bayesian R packages use Markov chain Monte Carlo (MCMC) estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")`, and `r pkg("brms", priority = "core")`; the latter two packages use the [Stan](mc-stan.org) infrastructure. `r pkg("blme")`, built on `r pkg("lme4", priority = "core")`, uses maximum a posteriori (MAP) estimation. `r pkg("bamlss")` provides a flexible set of modular functions for Bayesian regression modelling using the JAGS infrastructure.
+Most Bayesian R packages use Markov chain Monte Carlo (MCMC) estimation: `r pkg("MCMCglmm", priority = "core")`, `r pkg("rstanarm")`, and `r pkg("brms", priority = "core")`; the latter two packages use the [Stan](mc-stan.org) infrastructure. `r pkg("blme")`, built on `r pkg("lme4", priority = "core")`, uses maximum a posteriori (MAP) estimation. `r pkg("bamlss")` provides a flexible set of modular functions for Bayesian regression modeling.
 
 #### Generalized linear mixed models
 
