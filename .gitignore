@@ -21,3 +21,5 @@ bib2xhtml
 MixedModels.html
 *.html
 \#*
+.Rproj.user
+
