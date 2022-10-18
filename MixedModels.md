@@ -75,7 +75,7 @@ Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be 
 - `nlme::nlme()` from `r pkg("nlme")` and `lmer4::nlmer()` from `r pkg("lme4", priority = "core")` fit nonlinear mixed effects models by maximum likelihood.
 - `nlmixr2::nlmixr2()` from `r pkg("nlmixr2")` fit nonlinear mixed effects model by first order conditional estimation (focei) maximum likelihood approximation (a different approximation than `nlme:nlme()` and `lmer4:nlmer()`), and also allows generalized likelihood as well as a selection built-in link functions.
 - `gnlmm()` and `gnlmm3()` from `r pkg("repeated")` fit GNLMMs by Gauss-Hermite integration.
-- `r pkg("saemix")` and `r pkg("nlmixr")` both use a stochastic approximation of the EM algorithm to fit a wide range of GNLMMs.
+- `r pkg("saemix")` and `r pkg("nlmixr2")` both use a stochastic approximation of the EM algorithm to fit a wide range of GNLMMs.
 
 
 *Bayesian:*
@@ -111,7 +111,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrNLMM")`.
 - **Phylogenetic models**: `r pkg("pez")`, `r pkg("phyr")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`.
 - **Regularized/penalized models** (regularization or variable selection by ridge, lasso, or elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection. `r pkg("glmmLasso")` fits GLMMs with L1-penalized (LASSO) fixed effects. `r pkg("bamlss")` implements LASSO-like penalization for generalized additive models.
-- **Robust/heavy-tailed estimation** (downweighting the importance of extreme observations): `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator. Some packages (`r pkg("brms", priority = "core")`, `r pkg("bamlss")`, `r pkg("mgcv")` with `family = "scat"`, `r pkg("nlmixr")`) allow heavy-tailed response distributions such as Student-$t$.
+- **Robust/heavy-tailed estimation** (downweighting the importance of extreme observations): `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator. Some packages (`r pkg("brms", priority = "core")`, `r pkg("bamlss")`, `r pkg("mgcv")` with `family = "scat"`, `r pkg("nlmixr2")`) allow heavy-tailed response distributions such as Student-$t$.
 - **Skewed data**: `r pkg("skewlmm")` fits a scale mixture of skew-normal linear mixed models using expectation-maximization (EM). `r pkg("nlmixr2")` can fit skewed data with dynamic transform of both sides with both `coxBox()` and `yeoJohnson()` transformations with maximum likelihood or the EM method "saem".
 - **Spatial models**: `r github("inbo/INLA")`, `r pkg("nlme", priority = "core")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes), `r pkg("brms", priority = "core")`, `r github("Biometris/LMMsolver")`, `r pkg("bamlss")`; see also the `r view("Spatial")` and `r view("SpatioTemporal")` CRAN task views.
 - **Survival analysis**: `r pkg("coxme")`.
