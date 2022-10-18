@@ -1,5 +1,12 @@
-draft of CRAN Task View for mixed models
+## CRAN Task View: Mixed, Multilevel, and Hierarchical Models in R
 
-- [draft](https://github.com/bbolker/mixedmodels-taskview/blob/main/MixedModels.md)
-- [R code](https://github.com/bbolker/mixedmodels-taskview/blob/main/gen_glmm_packages.R) for regex search, computing download rank/centrality/dependencies; [auto-generated CSV](https://github.com/bbolker/mixedmodels-taskview/blob/main/glmm_packages.csv); [metadata](https://github.com/bbolker/mixedmodels-taskview/blob/main/glmm_packages_meta.md) and [metadata generator](https://github.com/bbolker/mixedmodels-taskview/blob/main/glmm_packages_meta.rmd)
+**URL:** <https://CRAN.R-project.org/view=MixedModels>
 
+**Source file:** [MixedModels.md](MixedModels.md)
+
+**Contributions:** Suggestions and improvements for this task view are very
+welcome and can be made through issues or pull requests here on GitHub or
+via e-mail to the maintainer address. For further details see the
+[Contributing](https://github.com/cran-task-views/ctv/blob/main/Contributing.md)
+guide. All contributions must adhere to the
+[code of conduct](https://github.com/cran-task-views/ctv/blob/main/CodeOfConduct.md).
