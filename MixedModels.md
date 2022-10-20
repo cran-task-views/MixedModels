@@ -73,7 +73,7 @@ Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be 
 *Frequentist:*
 
 - `nlme::nlme()` from `r pkg("nlme")` and `lmer4::nlmer()` from `r pkg("lme4", priority = "core")` fit nonlinear mixed effects models by maximum likelihood.
-- `nlmixr2::nlmixr2()` from `r pkg("nlmixr2")` fit nonlinear mixed effects model by first order conditional estimation (focei) maximum likelihood approximation (a different approximation than `nlme:nlme()` and `lmer4:nlmer()`), and also allows generalized likelihood as well as a selection built-in link functions.
+- `nlmixr2::nlmixr2()` from `r pkg("nlmixr2")` fits nonlinear mixed effects model by first order conditional estimation (focei) maximum likelihood approximation (a different approximation than `nlme:nlme()` and `lmer4:nlmer()`), and allows generalized likelihood as well as a selection of built-in link functions.
 - `gnlmm()` and `gnlmm3()` from `r pkg("repeated")` fit GNLMMs by Gauss-Hermite integration.
 - `r pkg("saemix")` and `r pkg("nlmixr2")` both use a stochastic approximation of the EM algorithm to fit a wide range of GNLMMs.
 
@@ -97,11 +97,11 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Big data/distributed computation**: `r pkg("lmmpar")`, `r pkg("mbest")`. See also [MixedModels.jl](https://juliastats.org/MixedModels.jl/dev/) (Julia), [diamond](https://github.com/stitchfix/diamond) (Python).
 - **Bioinformatics/quantitative genetics**: `r pkg("MCMC.qpcr")`, `r pkg("QGglmm")`, `r pkg("CpGassoc")` (methylation studies).  
 - **Censored data** (response data known only up to lower/upper bounds): `r pkg("brms", priority = "core")` and `r pkg("nlmixr2")` (general), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors). Censored Gaussian (Tobit) responses: `r pkg("GLMMadaptive")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("gamlss")`.
-- **Differential equations** (fitting DEs with group-structured parameters): `r pkg("mixedsde")` for stochastic differential equation. Ordinary Differential equations can be run with `r pkg("nlmixr2")` by the "focei" or EM "saem" methods, or using the `r pkg("nlme")` package, see also `r view("DifferentialEquations")`.
-- **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`; also see the `r view("Psychometrics")` task view.
+- **Differential equations** (fitting DEs with group-structured parameters): `r pkg("mixedsde")` for stochastic DEs. Ordinary DEs can be run with `r pkg("nlmixr2")` using the "focei" or "saem" (EM) methods, or using the `r pkg("nlme")` package; see also the `r view("DifferentialEquations")` task view.
+- **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`; see also the `r view("Psychometrics")` task view.
 - **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("sommer", priority = "core")`, `r pkg("rrBLUP")`, `r pkg("BGLR")`, `r github("perpdgo/lme4GS")`, `r github("variani/lme4qtl")`, `r pkg("pedigreemm")`, `r pkg("qgtools")`, `r github("cheuerde/cpgen")`, `r pkg("QTLRel")`. 
 - **Location-scale models**: `r pkg("nlme", priority = "core")`, `r pkg("glmmTMB", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("mgcv")` [with `family` chosen from one of the `*ls`/`*lss` options]  all allow modeling of the dispersion/scale component.
-- **Missing values**: `r pkg("mice")`, `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`, `r pkg("pan")`; also see the `r view("MissingData")` task view.
+- **Missing values**: `r pkg("mice")`, `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`, `r pkg("pan")`; see also the `r view("MissingData")` task view.
 - **Multimembership models**: (Bayesian) `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r github("benrosche/rmm")`; (frequentist) `r github("jvparidon/lmerMultiMember")`.
 - **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("mgcv")`.
 - **Multi-trait analysis**: (multiple dependent variables) `r pkg("BMTME")`, `r pkg("MCMCglmm", priority = "core")`.
