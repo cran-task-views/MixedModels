@@ -61,10 +61,12 @@ Most Bayesian mixed model packages use some form of Markov chain Monte Carlo (or
 - `r pkg("brms", priority = "core")`: Hamilton Monte Carlo. Linear, robust linear, count data, survival, response times, ordinal, zero-inflated/hurdle/censored data.
 - `r pkg("bamlss")`: optimization and derivative-based Metropolis-Hastings/slice sampling. Wide range of distributions and link functions.
 
-Two packages (in addition to `r pkg("bamlss")`) find maximum *a posteriori* fits to Bayesian (G)LMMs by optimization:
+The following packages (in addition to `r pkg("bamlss")`) find maximum *a posteriori* fits to Bayesian (G)LMMs by optimization:
 
 - `r pkg("blme")` wraps `r pkg("lme4", priority = "core")` to add prior distributions.
-- `r github("inbo/INLA")` provides a wide range of latent models (especially for spatial estimation), priors, and distributions.
+- [INLA](https://www.r-inla.org) provides a wide range of latent models (especially for spatial estimation), priors, and distributions.
+- `r pkg("inlabru")` facilitates spatial modeling using integrated nested Laplace approximation via the R-INLA package. Additionally, extends the GAM-like model class to more general nonlinear predictor expressions, and implements a log Gaussian Cox process likelihood for modeling univariate and spatial point processes based on ecological survey data.
+- `r github("inbo/inlatools")` provides tools to set sensible priors and check the dispersion and distribution of INLA models.
 
 #### Nonlinear mixed models
 
