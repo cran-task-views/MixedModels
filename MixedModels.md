@@ -7,7 +7,7 @@ version: 2022-10-18
 source: https://github.com/cran-task-views/MixedModels/
 ---
 
-**Contributors**: Maintainers *plus* Michael Agronah.
+**Contributors**: Maintainers *plus* Michael Agronah, Matthew Fidler, Thierry Onkelinx
 
 
 *Mixed* (or *mixed-effect*) *models* are a broad class of statistical models used to analyze data where observations can be assigned *a priori* to discrete groups, and where the parameters describing the differences between groups are treated as random (or *latent*) variables. They are one category of *multilevel*, or *hierarchical* models; *longitudinal* data are often analyzed in this framework. In econometrics, longitudinal or cross-sectional time series data are often referred to as *panel data* and are sometimes fitted with mixed models.  Mixed models can be fitted in either frequentist or Bayesian frameworks.
