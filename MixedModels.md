@@ -30,7 +30,7 @@ Linear mixed models (LMM) make the following assumptions:
 The most commonly used packages and/or functions for frequentist LMMs are:
 
 - `r pkg("nlme", priority = "core")`: `nlme::lme()` provides REML or ML estimation. Allows multiple nested random effects, and provides structures for modeling heteroscedastic and/or correlated errors. Wald estimates of parameter uncertainty.
-- `r pkg("lme4", priority = "core")`: `lmer4::lmer()`) provides REML or ML estimation. Allows multiple nested or crossed random effects, can compute profile confidence intervals and conduct parametric bootstrapping.
+- `r pkg("lme4", priority = "core")`: `lmer4::lmer()` provides REML or ML estimation. Allows multiple nested or crossed random effects, can compute profile confidence intervals and conduct parametric bootstrapping.
 - `r pkg("mbest")`: fits large nested LMMs using a fast moment-based approach.
 
 *Bayesian:*
