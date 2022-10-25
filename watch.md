@@ -1,0 +1,2 @@
+- `nlmm`: currently archived but may return
+- `rmm`, `lmerMultiMember`: both Github but headed to CRAN soon
