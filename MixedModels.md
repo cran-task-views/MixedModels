@@ -123,6 +123,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Sports analytics**: `r pkg("mvglmmRank")`, multivariate generalized linear mixed models for ranking sports teams.
 - **Survival analysis**: `r pkg("coxme")`.
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`, `r pkg("gpboost")`
+- **Weighted models**: `r pkg("WeMix")` (linear and logit models with weights at multiple levels)
 - **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`; (Bayesian): `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("bamlss")`, `r pkg("mgcv")` (zi Poisson only).
 
 
