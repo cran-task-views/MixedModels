@@ -228,6 +228,7 @@ These topics are closely related because there are few available analytical meth
 - Other software: [ASReml-R](https://vsni.co.uk/software/asreml-r) (`r pkg("asremlPlus")`).
 - Other software: [assist](https://yuedong.faculty.pstat.ucsb.edu/software.html).
 - Other software: [INLA](http://www.r-inla.org/home).
+- Other software: [MegaLMM](https://github.com/deruncie/MegaLMM)
 - Other software: [Zelig Project](https://zeligproject.org/).
 - Other software: [MixWild/MixRegLS](https://voices.uchicago.edu/hedeker/mixwild_mixregls/) for scale-location modeling.
 - Other software: [MixedModels.jl](https://github.com/JuliaStats/MixedModels.jl) for mixed models in Julia.
