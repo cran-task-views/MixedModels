@@ -110,7 +110,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Missing values**: `r pkg("mice")`, `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`, `r pkg("pan")`; see also the `r view("MissingData")` task view.
 - [**Multiple membership models**]{#multimembership-models}: (Bayesian) `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r github("benrosche/rmm")`; (frequentist) `r github("jvparidon/lmerMultiMember")`.
 - **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("mgcv")`, `r pkg("mclogit")`.
-- **Multi-trait analysis**: (multiple dependent variables) `r pkg("BMTME")`, `r pkg("MCMCglmm", priority = "core")`.
+- **Multi-trait analysis**: (multiple dependent variables) `r pkg("BMTME")`, `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`
 - **Non-Gaussian random effects**: `r pkg("brms", priority = "core")`, `r pkg("repeated")`, `r pkg("spaMM")`.
 - **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("cplm")`.
 - **Over-dispersed models**: `r pkg("aod")`, `r pkg("aods3")`.
@@ -229,7 +229,6 @@ These topics are closely related because there are few available analytical meth
 - Other software: [ASReml-R](https://vsni.co.uk/software/asreml-r) (`r pkg("asremlPlus")`).
 - Other software: [assist](https://yuedong.faculty.pstat.ucsb.edu/software.html).
 - Other software: [INLA](http://www.r-inla.org/home).
-- Other software: [MegaLMM](https://github.com/deruncie/MegaLMM)
 - Other software: [Zelig Project](https://zeligproject.org/).
 - Other software: [MixWild/MixRegLS](https://voices.uchicago.edu/hedeker/mixwild_mixregls/) for scale-location modeling.
 - Other software: [MixedModels.jl](https://github.com/JuliaStats/MixedModels.jl) for mixed models in Julia.
