@@ -239,7 +239,7 @@ These topics are closely related because there are few available analytical meth
 - Other software: [MixWild/MixRegLS](https://voices.uchicago.edu/hedeker/mixwild_mixregls/) for scale-location modeling.
 - Other software: [MixedModels.jl](https://github.com/JuliaStats/MixedModels.jl) for mixed models in Julia.
 - Other software: [Monolix](https://monolix.lixoft.com/) for ODE based mixed models (commerical).
-- Other software: [NONMEM](https://www.iconplc.com/innovation/nonmem/)  for ODE based mixed models (commerical).
+- Other software: [NONMEM](https://www.iconplc.com/innovation/nonmem/) for ODE based mixed models (commercial).
 - Book: *[Mixed-Effects Models in S and S-PLUS](https://link.springer.com/book/10.1007/b98882)*.
 - Book: *[SAS System for Mixed Models](https://v8doc.sas.com/sashtml/hrddoc/indfiles/55235.htm)*.
 - Book: *[Generalized Linear Mixed Models](https://www.taylorfrancis.com/books/mono/10.1201/b13151/generalized-linear-mixed-models-walter-stroup)*.
