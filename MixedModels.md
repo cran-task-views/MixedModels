@@ -220,6 +220,12 @@ These topics are closely related because there are few available analytical meth
 - [Mplus](https://www.statmodel.com/): `r pkg("MplusAutomation")`.
 - [ASReml R](https://vsni.co.uk/software/asreml-r): `r pkg("asremlPlus")`.
 - [Phoenix NLME software](http://www.certara.com/software/pkpd-modeling-and-simulation/phoenix-nlme/): `r pkg("Phxnlme")`.
+- `r pkg("babelmixr2")` allows `r pkg("nlmixr2")` models to be translated and run in either the commercial tool 
+  [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/innovation/nonmem/) and then reads the results 
+  back in to create a standardized `nlmixr2` fit object. This fit object runs the diagnostics in `nlmixr2` and compares them
+  to the ones output in the commercial software to "validate" the fit object against the output of the commercial tool.  
+  It also interfaces with free tools such as `r pkg("PKNCA)` for automatically using observed pharmacokinetic (PK) data 
+  for initial estimates of PK models.
 
 ### Links
 - Help: [R-SIG-mixed-models mailing list](https://stat.ethz.ch/mailman/listinfo/r-sig-mixed-models) for discussion of mixed-model-related questions, course announcements, etc..
@@ -232,6 +238,8 @@ These topics are closely related because there are few available analytical meth
 - Other software: [Zelig Project](https://zeligproject.org/).
 - Other software: [MixWild/MixRegLS](https://voices.uchicago.edu/hedeker/mixwild_mixregls/) for scale-location modeling.
 - Other software: [MixedModels.jl](https://github.com/JuliaStats/MixedModels.jl) for mixed models in Julia.
+- Other software: [Monolix](https://monolix.lixoft.com/) for ODE based mixed models (commerical).
+- Other software: [NONMEM](https://www.iconplc.com/innovation/nonmem/) for ODE based mixed models (commercial).
 - Book: *[Mixed-Effects Models in S and S-PLUS](https://link.springer.com/book/10.1007/b98882)*.
 - Book: *[SAS System for Mixed Models](https://v8doc.sas.com/sashtml/hrddoc/indfiles/55235.htm)*.
 - Book: *[Generalized Linear Mixed Models](https://www.taylorfrancis.com/books/mono/10.1201/b13151/generalized-linear-mixed-models-walter-stroup)*.
