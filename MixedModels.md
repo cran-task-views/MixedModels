@@ -220,11 +220,11 @@ These topics are closely related because there are few available analytical meth
 - [Mplus](https://www.statmodel.com/): `r pkg("MplusAutomation")`.
 - [ASReml R](https://vsni.co.uk/software/asreml-r): `r pkg("asremlPlus")`.
 - [Phoenix NLME software](http://www.certara.com/software/pkpd-modeling-and-simulation/phoenix-nlme/): `r pkg("Phxnlme")`.
-- `r pkg("babelmixr2")` allows `r pkg("nlmixr2")` models to translated and run in either the commercial tool 
-  [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/innovation/nonmem/) and then read the results 
-  back in to create a standardized `nlmixr2` fit object. This fit object runs the diagnostics in `nlmixr2` and the compares
-  to the ones output in the commercial software to "validate" the fit object represents the output of the commercial tool.  
-  It also interfaces with free tools as well like `r pkg("PKNCA)` for automatically using observed Pharmcokinetic (PK) data 
+- `r pkg("babelmixr2")` allows `r pkg("nlmixr2")` models to be translated and run in either the commercial tool 
+  [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/innovation/nonmem/) and then reads the results 
+  back in to create a standardized `nlmixr2` fit object. This fit object runs the diagnostics in `nlmixr2` and compares them
+  to the ones output in the commercial software to "validate" the fit object against the output of the commercial tool.  
+  It also interfaces with free tools such as `r pkg("PKNCA)` for automatically using observed Pharmcokinetic (PK) data 
   for initial estimates of PK models.
 
 ### Links
