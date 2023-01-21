@@ -1,4 +1,4 @@
-)p---
+---
 name: MixedModels
 topic: Mixed, Multilevel, and Hierarchical Models in R
 maintainer: Ben Bolker, Julia Piaskowski, Emi Tanaka, Phillip Alday, Wolfgang Viechtbauer
