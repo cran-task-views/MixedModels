@@ -224,7 +224,7 @@ These topics are closely related because there are few available analytical meth
   [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/innovation/nonmem/) and then reads the results 
   back in to create a standardized `nlmixr2` fit object. This fit object runs the diagnostics in `nlmixr2` and compares them
   to the ones output in the commercial software to "validate" the fit object against the output of the commercial tool.  
-  It also interfaces with free tools such as `r pkg("PKNCA)` for automatically using observed pharmacokinetic (PK) data 
+  It also interfaces with free tools such as `r pkg("PKNCA")` for automatically using observed pharmacokinetic (PK) data 
   for initial estimates of PK models.
 
 ### Links
