@@ -201,7 +201,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 #### Bootstrapping
 
-- `r pkg("pbkrtest")`, `r pkg("lme4", priority = "core")` (`lme4::bootMer()` function), `r pkg("lmeresampler")`.
+- `r pkg("pbkrtest")`, `r pkg("lme4", priority = "core")` (`lme4::bootMer()` function), `r pkg("lmeresampler")`, `r pkg("boot.pval")`.
 
 #### Power analysis and simulation
 
