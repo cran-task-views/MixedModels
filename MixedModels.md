@@ -197,7 +197,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 #### Prediction and estimation
 
-- `r pkg("emmeans")`, `r pkg("effects")`, `r pkg("margins")`, `r pkg("MarginalMediation")`, `r pkg("marginaleffects")`.
+- `r pkg("emmeans")`, `r pkg("effects")`, `r pkg("margins")`, `r pkg("MarginalMediation")`, `r pkg("marginaleffects")`, `r pkg("ggeffects")`.
 
 #### Bootstrapping
 
