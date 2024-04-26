@@ -247,3 +247,4 @@ These topics are closely related because there are few available analytical meth
 - Book: *[Linear Mixed-Effects Models: A Step-by-Step Approach](https://link.springer.com/book/10.1007/978-1-4614-3900-4)*.
 - Book: *[Mixed Effects Models and Extensions in Ecology with R](https://link.springer.com/book/10.1007/978-0-387-87458-6)*.
 - Online Book: *[Embrace Uncertainty: Mixed-effects models with Julia](https://juliamixedmodels.github.io/EmbraceUncertainty/)*.
+- Online Book: *[Generalized Linear Mixed Models with Applications in Agriculture and Biology](https://link.springer.com/book/10.1007/978-3-031-32800-8)*
