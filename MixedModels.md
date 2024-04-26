@@ -141,7 +141,7 @@ These packages do not directly provide functions to fit mixed models, but instea
 
 #### Model diagnostics
 
-- **general**: `r pkg("HLMdiag")` (diagnostic tools for hierarchical (multilevel) linear models), `r pkg("rockchalk")`, `r pkg("performance")`, `r pkg("multilevelTools")`, `r pkg("merTools")` (for models fitted using `lme4`).
+- **general**: `r pkg("HLMdiag")` (diagnostic tools for hierarchical (multilevel) linear models), `r pkg("rockchalk")`, `r pkg("performance")`, `r pkg("multilevelTools")`, `r pkg("merTools")` (for models fitted using `lme4`) and `r pkg("ggResidpanel")`.
 - **influential data points**: `r pkg("influence.ME")`, `r pkg("influence.SEM")`.
 - **residuals**: `r pkg("DHARMa")`.
 
