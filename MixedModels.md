@@ -106,10 +106,10 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`; see also the `r view("Psychometrics")` task view.
 - **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("sommer", priority = "core")`, `r pkg("rrBLUP")`, `r pkg("BGLR")`, `r github("perpdgo/lme4GS")`, `r github("variani/lme4qtl")`, `r pkg("pedigreemm")`, `r pkg("qgtools")`, `r github("cheuerde/cpgen")`, `r pkg("QTLRel")`. 
 - **Location-scale models**: `r pkg("nlme", priority = "core")`, `r pkg("glmmTMB", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("mgcv")` [with `family` chosen from one of the `*ls`/`*lss` options]  all allow modeling of the dispersion/scale component.
-- **Missing values**: `r pkg("mice")`, `r pkg("mlmmm")` (EM imputation), `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`, `r pkg("pan")`; see also the `r view("MissingData")` task view.
+- **Missing values**: `r pkg("mice")`, `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`, `r pkg("pan")`; see also the `r view("MissingData")` task view.
 - [**Multiple membership models**]{#multimembership-models}: (Bayesian) `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r github("benrosche/rmm")`; (frequentist) `r github("jvparidon/lmerMultiMember")` (can also fit the Bradley-Terry model)
 - **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("mgcv")`, `r pkg("mclogit")`.
-- **Multi-trait analysis**: (multiple dependent variables) `r pkg("BMTME")`, `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`
+- **Multi-trait analysis**: (multiple dependent variables) `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`
 - **Non-Gaussian random effects**: `r pkg("brms", priority = "core")`, `r pkg("repeated")`, `r pkg("spaMM")`.
 - **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("cplm")`.
 - **Over-dispersed models**: `r pkg("aod")`, `r pkg("aods3")`.
@@ -184,7 +184,7 @@ Functions and frameworks for convenient and tabular and graphical output of mixe
 
 These functions provide convenient frameworks to fit and interpret mixed models.
 
-- **Model fitting**: `r pkg("multilevelmod", priority = "core")`,  `r pkg("ez")`, `r pkg("mixlm")`, `r pkg("afex")`, `r pkg("dalmatian")` (wrapper to JAGS and `r pkg("nimble")`).
+- **Model fitting**: `r pkg("multilevelmod", priority = "core")`,  `r pkg("ez")`, `r pkg("mixlm")`, `r pkg("afex")`, and `r pkg("nimble")`.
 - **Model summary**: `r pkg("broom.mixed", priority = "core")`, `r pkg("insight")`.
 - **Variable selection & model averaging**: `r pkg("LMERConvenienceFunctions")`, `r pkg("MuMIn")`, `r pkg("glmulti")` (see, e.g., [maintainer's blog](https://vcalcagnoresearch.wordpress.com/package-glmulti/) or [here](https://gist.github.com/bbolker/4ae3496c0ddf99ea2009a22b94aecbe5) for use with mixed models).
 
@@ -207,7 +207,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 These topics are closely related because there are few available analytical methods for computing statistical power for mixed models; power usually needs to be estimated by simulation.
 
-- **Power**: `r pkg("longpower")`, `r pkg("clusterPower")`, `r pkg("pass.lme")` `r pkg("simr")`
+- **Power**: `r pkg("longpower")`, `r pkg("pass.lme")` `r pkg("simr")`
 - **Simulation**: `r pkg("faux")`; `simulate()` in `lme4` (for formula arguments); `r pkg("rxode2")`, `r pkg("mrgsolve")`, `r pkg("PKPDsim")` (ODE/pharmacokinetic models)
 
 #### Model selection
@@ -219,7 +219,6 @@ These topics are closely related because there are few available analytical meth
 
 - [Mplus](https://www.statmodel.com/): `r pkg("MplusAutomation")`.
 - [ASReml R](https://vsni.co.uk/software/asreml-r): `r pkg("asremlPlus")`.
-- [Phoenix NLME software](http://www.certara.com/software/pkpd-modeling-and-simulation/phoenix-nlme/): `r pkg("Phxnlme")`.
 - `r pkg("babelmixr2")` allows `r pkg("nlmixr2")` models to be translated and run in either the commercial tool 
   [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/innovation/nonmem/) and then reads the results 
   back in to create a standardized `nlmixr2` fit object. This fit object runs the diagnostics in `nlmixr2` and compares them
