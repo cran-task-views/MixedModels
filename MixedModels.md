@@ -50,7 +50,8 @@ Generalized linear mixed models (GLMMs) can be described as hierarchical extensi
 - `r pkg("hglm")` fits hierarchical GLMs using $h$-likelihood (*sensu* Nelder, Lee and Pawitan (2017)
 - `r pkg("glmm")` fits GLMMs using Monte Carlo likelihood approximation.
 - `r pkg("glmmEP")` fits probit mixed models for binary data by expectation propagation.
-- `r pkg("mbest")`: fits large nested GLMMs using a fast moment-based approach.
+- `r pkg("mbest")` fits large nested GLMMs using a fast moment-based approach.
+- `r pkg("galamm")` fits a wide variety of models (heteroscedastic, mixed response types, factor loadings, etc.)
 
 *Bayesian:*
 
@@ -97,7 +98,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 
 ### Specialized models
 
-- [**Additive models**]{#additive-models} (models incorporating smooth functional components such as regression splines or Gaussian processes): `r pkg("gamm4")`, `r pkg("mgcv")`, `r pkg("brms", priority = "core")`, `r pkg("lmeSplines")`, `r pkg("bamlss")`, `r pkg("gamlss")`, `r github("Biometris/LMMsolver")`, `r pkg("R2BayesX")`, `r pkg("GLMMRR")`.
+- [**Additive models**]{#additive-models} (models incorporating smooth functional components such as regression splines or Gaussian processes; also known as *semiparametric* models): `r pkg("gamm4")`, `r pkg("mgcv")`, `r pkg("brms", priority = "core")`, `r pkg("lmeSplines")`, `r pkg("bamlss")`, `r pkg("gamlss")`, `r github("Biometris/LMMsolver")`, `r pkg("R2BayesX")`, `r pkg("GLMMRR")`, `r pkg("glmmTMB", priority = "core")`, `r pkg("galamm")`.
 - **Big data/distributed computation**: `r pkg("lmmpar")`, `r pkg("mbest")`. See also [MixedModels.jl](https://juliastats.org/MixedModels.jl/dev/) (Julia), [diamond](https://github.com/stitchfix/diamond) (Python).
 - **Bioinformatics/quantitative genetics**: `r pkg("MCMC.qpcr")`, `r pkg("QGglmm")`, `r pkg("CpGassoc")` (methylation studies).  
 - **Censored data** (response data known only up to lower/upper bounds): `r pkg("brms", priority = "core")` and `r pkg("nlmixr2")` (general), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors). Censored Gaussian (Tobit) responses: `r pkg("GLMMadaptive")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("gamlss")`.
