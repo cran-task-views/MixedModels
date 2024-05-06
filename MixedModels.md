@@ -110,7 +110,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Missing values**: `r pkg("mice")`, `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`, `r pkg("pan")`; see also the `r view("MissingData")` task view.
 - [**Multiple membership models**]{#multimembership-models}: (Bayesian) `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r github("benrosche/rmm")`; (frequentist) `r github("jvparidon/lmerMultiMember")` (can also fit the Bradley-Terry model)
 - **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("mgcv")`, `r pkg("mclogit")`.
-- **Multi-trait analysis**: (multiple dependent variables) `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`
+- **Multivariate responses/multi-trait analysis**: (multiple dependent variables; the response variables may or may not be constrained to be from the same family) `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`, `r pkg("brms")`, `r pkg("sommer")`. Many mixed-effect packages allow fitting of (homogeneous) multivariate responses by "melting" the data (converting to long format) and treating each observation in the original data as a cluster.
 - **Non-Gaussian random effects**: `r pkg("brms", priority = "core")`, `r pkg("repeated")`, `r pkg("spaMM")`.
 - **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("cplm")`, `r pkg("GLMMadaptive")`
 - **Over-dispersed models**: `r pkg("aod")`, `r pkg("aods3")`.
