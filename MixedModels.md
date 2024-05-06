@@ -3,7 +3,7 @@ name: MixedModels
 topic: Mixed, Multilevel, and Hierarchical Models in R
 maintainer: Ben Bolker, Julia Piaskowski, Emi Tanaka, Phillip Alday, Wolfgang Viechtbauer
 email: bolker@mcmaster.ca
-version: 2022-10-31
+version: 2024-05-06
 source: https://github.com/cran-task-views/MixedModels/
 ---
 
@@ -19,7 +19,7 @@ This task view only includes models that incorporate *continuous* (usually altho
 
 #### Linear mixed models
 
-Linear mixed models (LMM) make the following assumptions:
+Linear mixed models (LMMs) make the following assumptions:
 
 - The expected values of the responses are linear combinations of the fixed predictor variables and the random effects.
 - The conditional distribution of the responses is Gaussian (equivalently, the errors are Gaussian).
@@ -50,7 +50,9 @@ Generalized linear mixed models (GLMMs) can be described as hierarchical extensi
 - `r pkg("hglm")` fits hierarchical GLMs using $h$-likelihood (*sensu* Nelder, Lee and Pawitan (2017)
 - `r pkg("glmm")` fits GLMMs using Monte Carlo likelihood approximation.
 - `r pkg("glmmEP")` fits probit mixed models for binary data by expectation propagation.
-- `r pkg("mbest")`: fits large nested GLMMs using a fast moment-based approach.
+- `r pkg("mbest")` fits large nested GLMMs using a fast moment-based approach.
+- `r pkg("galamm")` fits a wide variety of models (heteroscedastic, mixed response types, factor loadings, etc.)
+- `r pkg("glmmrBase")` uses MCMC and Laplace approximations to Gaussian, binomial, Poisson, Beta, Gamma responses with flexible correlation structures
 
 *Bayesian:*
 
@@ -94,24 +96,27 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - `r pkg("wgeesel")` implements a weighted extension of generalized linear models for longitudinal clustered data by incorporating the correlation within-cluster when data is missing at random.
 - `r pkg("geesmv")`: GEE estimator using the original sandwich variance estimator proposed by Liang and Zeger (1986), and eight types of variance estimators for improving the finite small-sample performance.
 - `r pkg("multgee")` is a GEE solver for correlated nominal or ordinal multinomial responses.
+- `r pkg("glmtoolbox")` handles a wide variety of model types (GLMs, beta-binomial and negative binomial, zero-inflation and zero-alteration, mixed models) via GEEs
 
-### Specialized models
+### Specialized models/tasks
 
-- [**Additive models**]{#additive-models} (models incorporating smooth functional components such as regression splines or Gaussian processes): `r pkg("gamm4")`, `r pkg("mgcv")`, `r pkg("brms", priority = "core")`, `r pkg("lmeSplines")`, `r pkg("bamlss")`, `r pkg("gamlss")`, `r github("Biometris/LMMsolver")`, `r pkg("R2BayesX")`, `r pkg("GLMMRR")`.
+- [**Additive models**]{#additive-models} (models incorporating smooth functional components such as regression splines or Gaussian processes; also known as *semiparametric* models): `r pkg("gamm4")`, `r pkg("mgcv")`, `r pkg("brms", priority = "core")`, `r pkg("lmeSplines")`, `r pkg("bamlss")`, `r pkg("gamlss")`, `r github("Biometris/LMMsolver")`, `r pkg("R2BayesX")`, `r pkg("GLMMRR")`, `r pkg("glmmTMB", priority = "core")`, `r pkg("galamm")`.
 - **Big data/distributed computation**: `r pkg("lmmpar")`, `r pkg("mbest")`. See also [MixedModels.jl](https://juliastats.org/MixedModels.jl/dev/) (Julia), [diamond](https://github.com/stitchfix/diamond) (Python).
-- **Bioinformatics/quantitative genetics**: `r pkg("MCMC.qpcr")`, `r pkg("QGglmm")`, `r pkg("CpGassoc")` (methylation studies).  
+- **Bioinformatics/quantitative genetics**: `r pkg("MCMC.qpcr")`, `r pkg("QGglmm")`, `r pkg("CpGassoc")` (methylation studies).
 - **Censored data** (response data known only up to lower/upper bounds): `r pkg("brms", priority = "core")` and `r pkg("nlmixr2")` (general), `r pkg("ARpLMEC")` (censored Gaussian, autoregressive errors). Censored Gaussian (Tobit) responses: `r pkg("GLMMadaptive")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("gamlss")`.
+- **Denominator degree-of-freedom computation**: Satterthwaite and/or Kenward-Roger corrections are computed by `r pkg("lmerTest")`, `r pkg("pbkrtest")`, `r pkg("glmmrBase")`
 - [**Differential equations**]{#differential-equations} (fitting DEs with group-structured parameters; this category overlaps considerably with **pharmacokinetic modeling**): `r pkg("mixedsde")` for stochastic DEs. Ordinary DEs can be run with `r pkg("nlmixr2")` using the "focei" or "saem" (EM) methods, or using the `r pkg("nlme")` package; see also the `r view("DifferentialEquations")` task view.
 - **Doubly hierarchical GLMs**: `r pkg("dhglm")`, `r pkg("mdhglm")` (multivariate)
 - **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`; see also the `r view("Psychometrics")` task view.
+- **Flexible correlation structures**: `r pkg("brms")`, `r pkg("glmmTMB")`, `r pkg("sommer")`, `r pkg("glmmrBase")`, `r pkg("regress")`
 - **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("sommer", priority = "core")`, `r pkg("rrBLUP")`, `r pkg("BGLR")`, `r github("perpdgo/lme4GS")`, `r github("variani/lme4qtl")`, `r pkg("pedigreemm")`, `r pkg("qgtools")`, `r github("cheuerde/cpgen")`, `r pkg("QTLRel")`. 
 - **Location-scale models**: `r pkg("nlme", priority = "core")`, `r pkg("glmmTMB", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("mgcv")` [with `family` chosen from one of the `*ls`/`*lss` options]  all allow modeling of the dispersion/scale component.
 - **Missing values**: `r pkg("mice")`, `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`, `r pkg("pan")`; see also the `r view("MissingData")` task view.
 - [**Multiple membership models**]{#multimembership-models}: (Bayesian) `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r github("benrosche/rmm")`; (frequentist) `r github("jvparidon/lmerMultiMember")` (can also fit the Bradley-Terry model)
 - **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("mgcv")`, `r pkg("mclogit")`.
-- **Multi-trait analysis**: (multiple dependent variables) `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`
+- **Multivariate responses/multi-trait analysis**: (multiple dependent variables; the response variables may or may not be constrained to be from the same family) `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`, `r pkg("brms")`, `r pkg("sommer")`, INLA. Many mixed-effect packages allow fitting of (homogeneous) multivariate responses by "melting" the data (converting to long format) and treating each observation in the original data as a cluster.
 - **Non-Gaussian random effects**: `r pkg("brms", priority = "core")`, `r pkg("repeated")`, `r pkg("spaMM")`.
-- **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("cplm")`.
+- **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("cplm")`, `r pkg("GLMMadaptive")`
 - **Over-dispersed models**: `r pkg("aod")`, `r pkg("aods3")`.
 - **Panel data**: in econometrics, *panel data* typically refers to subjects (individuals or firms) that are sampled repeatedly over time. The theoretical and computational approaches used by econometricians overlap with mixed models (e.g., see [here](https://cran.r-project.org/web/packages/plm/vignettes/A_plmPackage.html#nlme)). The `r pkg("plm")` package can fit mixed-effects panel models; see also the `r view("Econometrics")` task view.
 - **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrLMM")`, `r pkg("qrNLMM")`.
@@ -119,38 +124,38 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Repeated measures**: (packages with specialized covariance structures for handling repeated measures) `r pkg("nlme", priority = "core")`, `r pkg("mmrm")`, `r pkg("glmmTMB", priority = "core")`, `r github("Biometris/LMMsolver")`, `r pkg("repeated")`, `r pkg("mmrm")`
 - **Regularized/penalized models** (regularization or variable selection by ridge, lasso, or elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection. `r pkg("glmmLasso")` fits GLMMs with L1-penalized (LASSO) fixed effects. `r pkg("bamlss")` implements LASSO-like penalization for generalized additive models.
 - **Robust/heavy-tailed estimation** (downweighting the importance of extreme observations): `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator. Some packages (`r pkg("brms", priority = "core")`, `r pkg("bamlss")`, `r pkg("GLMMadaptive")`, `r pkg("glmmTMB")`, `r pkg("mgcv")` with `family = "scat"`, `r pkg("nlmixr2")`) allow heavy-tailed response distributions such as Student-$t$.
-- **Skewed data**: `r pkg("skewlmm")` fits a scale mixture of skew-normal linear mixed models using expectation-maximization (EM). `r pkg("nlmixr2")` can fit skewed data with dynamic transform of both sides with both `coxBox()` and `yeoJohnson()` transformations with maximum likelihood or the EM method "saem".
+- **Skewed data/response transformation**: `r pkg("skewlmm")` fits a scale mixture of skew-normal linear mixed models using expectation-maximization (EM). `r pkg("nlmixr2")` can fit skewed data with dynamic transform of both sides with both `coxBox()` and `yeoJohnson()` transformations with maximum likelihood or the EM method "saem". `r pkg("bcmixed")` fits Box-Cox-transformed LMMs and provides inferences for differences between treatment levels. `r pkg("boxcoxmix")` fits Box-Cox transformed LMMs and logistic mixed models.
 - **Spatial models**: `r pkg("nlme", priority = "core")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes), `r pkg("brms", priority = "core")`, `r github("Biometris/LMMsolver")`, `r pkg("bamlss")`; see also the `r view("Spatial")` and `r view("SpatioTemporal")` CRAN task views.
 - **Sports analytics**: `r pkg("mvglmmRank")`, multivariate generalized linear mixed models for ranking sports teams.
 - **Survival analysis**: `r pkg("coxme")`.
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`, `r pkg("gpboost")`
 - **Weighted models**: `r pkg("WeMix")` (linear and logit models with weights at multiple levels)
 - **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`; (Bayesian): `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("bamlss")`, `r pkg("mgcv")` (zi Poisson only).
-
+- **Zero-one inflated Beta regression**: `r pkg("brms")`, `r pkg("zoib")`, `r pkg("glmmTMB")` (zero-inflated only). *Ordered beta regression* is an alternative framework to address the same type of data: `r pkg("ordbetareg")`, `r pkg("glmmTMB")`
 
 ### Hierarchical modeling frameworks
 
 These packages do not directly provide functions to fit mixed models, but instead implement interfaces to general-purpose sampling and optimization toolboxes that can be used to fit mixed models. While models require extra effort to set up, and often require programming in a domain-specific language other than R, these frameworks are more flexible than most of the other packages listed here.
 
 * Interfaces to [JAGS](https://mcmc-jags.sourceforge.io/)/[OpenBUGS](https://www.mrc-bsu.cam.ac.uk/software/bugs/openbugs/): `r pkg("R2jags")`, `r pkg("rjags")`, `r pkg("R2OpenBUGS")` (BUGS language).
-* Interfaces to [Stan](http://mc-stan.org/) (C++ extensions): `r pkg("rstan")`, `r github("stan-dev/cmdstanr")`, `r github("rmcelreath/rethinking")`.
-* Other frameworks: `r pkg("TMB")` (automatic differentiation and Laplace approximation) (C++ extensions), `r pkg("tmbstan")`, `r pkg("nimble")`, `r pkg("greta")` (R interface to TensorFlow).
+* Interfaces to [Stan](http://mc-stan.org/) (C++ extensions): `r pkg("rstan")`, `r github("stan-dev/cmdstanr")`, `r github("rmcelreath/rethinking")` (`ulam()` function).
+* Other frameworks: `r pkg("TMB")` (automatic differentiation and Laplace approximation via C++ extensions), `r pkg("RTMB")` (simplified R interface to `TMB`), `r pkg("tmbstan")`, `r pkg("nimble")`, `r pkg("greta")` (R interface to TensorFlow).
 
 
 ### Model diagnostics and summary statistics
 
 #### Model diagnostics
 
-- **general**: `r pkg("HLMdiag")` (diagnostic tools for hierarchical (multilevel) linear models), `r pkg("rockchalk")`, `r pkg("performance")`, `r pkg("multilevelTools")`, `r pkg("merTools")` (for models fitted using `lme4`) and `r pkg("ggResidpanel")`.
+- **general**: `r pkg("HLMdiag")` (diagnostic tools for hierarchical (multilevel) linear models), `r pkg("rockchalk")`, `r pkg("performance")`, `r pkg("multilevelTools")`, `r pkg("merTools")` (for models fitted using `lme4`), `r pkg("ggResidpanel")`, `r pkg("mlmtools")`, `r pkg("DHARMa")`.
 - **influential data points**: `r pkg("influence.ME")`, `r pkg("influence.SEM")`.
 - **residuals**: `r pkg("DHARMa")`.
 
 #### Summary statistics
 
 - **Correlations**:  `r pkg("iccbeta")` (intraclass correlation), `r pkg("rptR")` (repeatabilities)
-- **$R^2$ calculations**: `r pkg("r2glmm")` ($R^2$ and partial $R^2$), `r pkg("MuMIn")` (`r.squaredGLMM()` function), `r pkg("partR2")`, `r pkg("performance")` (`r2()` function) (Note that there are many different methods for computing $R^2$ values for (G)LMMs: see e.g. Nakagawa, Johnson and Schielzeth (2017), Jaeger et al. (2017).)
+- **$R^2$ calculations**: `r pkg("r2glmm")` ($R^2$ and partial $R^2$), `r pkg("MuMIn")` (`r.squaredGLMM()` function), `r pkg("partR2")`, `r pkg("performance")` (`r2()` function), `r pkg("rr2")`, `r pkg("mlmtools")`, `r pkg("mlmhelpr")` (Note that there are many different methods for computing $R^2$ values for (G)LMMs: see e.g. Nakagawa, Johnson and Schielzeth (2017), Jaeger et al. (2017).). Many of these packages also compute *intra-class correlations*.
 - **Information criteria**: `r pkg("cAIC4")` (conditional AIC) , `r pkg("blmeco")` (WAIC).
-- **Robust variance-covariance estimates**: `r pkg("clubSandwich")`, `r pkg("merDeriv")`.
+- **Robust variance-covariance estimates**: `r pkg("clubSandwich")`, `r pkg("merDeriv")`, `r pkg("mlmhelpr")`, `r pkg("glmmrBase")`
 
 #### Derivatives
 
@@ -177,7 +182,7 @@ Many packages include small example data sets (e.g., `r pkg("lme4", priority = "
 Functions and frameworks for convenient and tabular and graphical output of mixed model results:
 
 - **Tables**: `r pkg("huxtable")`, `r pkg("broom.mixed", priority = "core")`, `r pkg("rockchalk")`, `r pkg("parameters")`, `r pkg("modelsummary")`.
-- **Figures**: `r pkg("dotwhisker")`, `r pkg("sjPlot")`, `r pkg("rockchalk")`.
+- **Figures/visualization**: `r pkg("dotwhisker")`, `r pkg("sjPlot")`, `r pkg("rockchalk")`, `r pkg("mlmtools")`
 
 
 ### Convenience wrappers
@@ -185,8 +190,10 @@ Functions and frameworks for convenient and tabular and graphical output of mixe
 These functions provide convenient frameworks to fit and interpret mixed models.
 
 - **Model fitting**: `r pkg("multilevelmod", priority = "core")`,  `r pkg("ez")`, `r pkg("mixlm")`, `r pkg("afex")`, and `r pkg("nimble")`.
-- **Model summary**: `r pkg("broom.mixed", priority = "core")`, `r pkg("insight")`.
+- **Model summaries**: `r pkg("broom.mixed", priority = "core")`, `r pkg("insight")`
 - **Variable selection & model averaging**: `r pkg("LMERConvenienceFunctions")`, `r pkg("MuMIn")`, `r pkg("glmulti")` (see, e.g., [maintainer's blog](https://vcalcagnoresearch.wordpress.com/package-glmulti/) or [here](https://gist.github.com/bbolker/4ae3496c0ddf99ea2009a22b94aecbe5) for use with mixed models).
+`r pkg("mlmhelpr")`
+* **Centering/scaling predictors** at the population or group level: `r pkg("mlmhelper")`, `r pkg("mlmtools")`, `arm::standardize()`
 
 ### Inference and model selection
 
@@ -201,14 +208,14 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 #### Bootstrapping
 
-- `r pkg("pbkrtest")`, `r pkg("lme4", priority = "core")` (`lme4::bootMer()` function), `r pkg("lmeresampler")`, `r pkg("boot.pval")`.
+- `r pkg("pbkrtest")`, `r pkg("lme4", priority = "core")` (`lme4::bootMer()` function), `r pkg("lmeresampler")`, `r pkg("boot.pval")`, `r pkg("mlmhelpr")`.
 
 #### Power analysis and simulation
 
 These topics are closely related because there are few available analytical methods for computing statistical power for mixed models; power usually needs to be estimated by simulation.
 
 - **Power**: `r pkg("longpower")`, `r pkg("pass.lme")` `r pkg("simr")`
-- **Simulation**: `r pkg("faux")`; `simulate()` in `lme4` (for formula arguments); `r pkg("rxode2")`, `r pkg("mrgsolve")`, `r pkg("PKPDsim")` (ODE/pharmacokinetic models)
+- **Simulation**: `r pkg("faux")`; `simulate()` in `lme4` (for formula arguments), `glmmTMB::simulate_new()`; `r pkg("rxode2")`, `r pkg("mrgsolve")`, `r pkg("PKPDsim")` (ODE/pharmacokinetic models)
 
 #### Model selection
 
@@ -237,7 +244,7 @@ These topics are closely related because there are few available analytical meth
 - Other software: [Zelig Project](https://zeligproject.org/).
 - Other software: [MixWild/MixRegLS](https://voices.uchicago.edu/hedeker/mixwild_mixregls/) for scale-location modeling.
 - Other software: [MixedModels.jl](https://github.com/JuliaStats/MixedModels.jl) for mixed models in Julia.
-- Other software: [Monolix](https://monolix.lixoft.com/) for ODE based mixed models (commerical).
+- Other software: [Monolix](https://monolix.lixoft.com/) for ODE based mixed models (commercial).
 - Other software: [NONMEM](https://www.iconplc.com/innovation/nonmem/) for ODE based mixed models (commercial).
 - Book: *[Mixed-Effects Models in S and S-PLUS](https://link.springer.com/book/10.1007/b98882)*.
 - Book: *[SAS System for Mixed Models](https://v8doc.sas.com/sashtml/hrddoc/indfiles/55235.htm)*.
