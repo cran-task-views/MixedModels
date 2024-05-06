@@ -143,16 +143,16 @@ These packages do not directly provide functions to fit mixed models, but instea
 
 #### Model diagnostics
 
-- **general**: `r pkg("HLMdiag")` (diagnostic tools for hierarchical (multilevel) linear models), `r pkg("rockchalk")`, `r pkg("performance")`, `r pkg("multilevelTools")`, `r pkg("merTools")` (for models fitted using `lme4`) and `r pkg("ggResidpanel")`.
+- **general**: `r pkg("HLMdiag")` (diagnostic tools for hierarchical (multilevel) linear models), `r pkg("rockchalk")`, `r pkg("performance")`, `r pkg("multilevelTools")`, `r pkg("merTools")` (for models fitted using `lme4`), `r pkg("ggResidpanel")`, `r pkg("mlmtools")`, `r pkg("DHARMa")`.
 - **influential data points**: `r pkg("influence.ME")`, `r pkg("influence.SEM")`.
 - **residuals**: `r pkg("DHARMa")`.
 
 #### Summary statistics
 
 - **Correlations**:  `r pkg("iccbeta")` (intraclass correlation), `r pkg("rptR")` (repeatabilities)
-- **$R^2$ calculations**: `r pkg("r2glmm")` ($R^2$ and partial $R^2$), `r pkg("MuMIn")` (`r.squaredGLMM()` function), `r pkg("partR2")`, `r pkg("performance")` (`r2()` function), `r pkg("rr2")` (Note that there are many different methods for computing $R^2$ values for (G)LMMs: see e.g. Nakagawa, Johnson and Schielzeth (2017), Jaeger et al. (2017).)
+- **$R^2$ calculations**: `r pkg("r2glmm")` ($R^2$ and partial $R^2$), `r pkg("MuMIn")` (`r.squaredGLMM()` function), `r pkg("partR2")`, `r pkg("performance")` (`r2()` function), `r pkg("rr2")`, `r pkg("mlmtools")`, `r pkg("mlmhelpr")` (Note that there are many different methods for computing $R^2$ values for (G)LMMs: see e.g. Nakagawa, Johnson and Schielzeth (2017), Jaeger et al. (2017).). Many of these packages also compute *intra-class correlations*.
 - **Information criteria**: `r pkg("cAIC4")` (conditional AIC) , `r pkg("blmeco")` (WAIC).
-- **Robust variance-covariance estimates**: `r pkg("clubSandwich")`, `r pkg("merDeriv")`.
+- **Robust variance-covariance estimates**: `r pkg("clubSandwich")`, `r pkg("merDeriv")`, `r pkg("mlmhelpr")`.
 
 #### Derivatives
 
@@ -179,7 +179,7 @@ Many packages include small example data sets (e.g., `r pkg("lme4", priority = "
 Functions and frameworks for convenient and tabular and graphical output of mixed model results:
 
 - **Tables**: `r pkg("huxtable")`, `r pkg("broom.mixed", priority = "core")`, `r pkg("rockchalk")`, `r pkg("parameters")`, `r pkg("modelsummary")`.
-- **Figures**: `r pkg("dotwhisker")`, `r pkg("sjPlot")`, `r pkg("rockchalk")`.
+- **Figures/visualization**: `r pkg("dotwhisker")`, `r pkg("sjPlot")`, `r pkg("rockchalk")`, `r pkg("mlmtools")`
 
 
 ### Convenience wrappers
@@ -189,6 +189,8 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 - **Model fitting**: `r pkg("multilevelmod", priority = "core")`,  `r pkg("ez")`, `r pkg("mixlm")`, `r pkg("afex")`, and `r pkg("nimble")`.
 - **Model summaries**: `r pkg("broom.mixed", priority = "core")`, `r pkg("insight")`
 - **Variable selection & model averaging**: `r pkg("LMERConvenienceFunctions")`, `r pkg("MuMIn")`, `r pkg("glmulti")` (see, e.g., [maintainer's blog](https://vcalcagnoresearch.wordpress.com/package-glmulti/) or [here](https://gist.github.com/bbolker/4ae3496c0ddf99ea2009a22b94aecbe5) for use with mixed models).
+`r pkg("mlmhelpr")`
+* **Centering/scaling predictors** at the population or group level: `r pkg("mlmhelper")`, `r pkg("mlmtools")`, `arm::standardize()`
 
 ### Inference and model selection
 
@@ -203,14 +205,14 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 #### Bootstrapping
 
-- `r pkg("pbkrtest")`, `r pkg("lme4", priority = "core")` (`lme4::bootMer()` function), `r pkg("lmeresampler")`, `r pkg("boot.pval")`.
+- `r pkg("pbkrtest")`, `r pkg("lme4", priority = "core")` (`lme4::bootMer()` function), `r pkg("lmeresampler")`, `r pkg("boot.pval")`, `r pkg("mlmhelpr")`.
 
 #### Power analysis and simulation
 
 These topics are closely related because there are few available analytical methods for computing statistical power for mixed models; power usually needs to be estimated by simulation.
 
 - **Power**: `r pkg("longpower")`, `r pkg("pass.lme")` `r pkg("simr")`
-- **Simulation**: `r pkg("faux")`; `simulate()` in `lme4` (for formula arguments); `r pkg("rxode2")`, `r pkg("mrgsolve")`, `r pkg("PKPDsim")` (ODE/pharmacokinetic models)
+- **Simulation**: `r pkg("faux")`; `simulate()` in `lme4` (for formula arguments), `glmmTMB::simulate_new()`; `r pkg("rxode2")`, `r pkg("mrgsolve")`, `r pkg("PKPDsim")` (ODE/pharmacokinetic models)
 
 #### Model selection
 
