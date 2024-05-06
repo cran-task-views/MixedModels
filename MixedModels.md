@@ -150,7 +150,7 @@ These packages do not directly provide functions to fit mixed models, but instea
 #### Summary statistics
 
 - **Correlations**:  `r pkg("iccbeta")` (intraclass correlation), `r pkg("rptR")` (repeatabilities)
-- **$R^2$ calculations**: `r pkg("r2glmm")` ($R^2$ and partial $R^2$), `r pkg("MuMIn")` (`r.squaredGLMM()` function), `r pkg("partR2")`, `r pkg("performance")` (`r2()` function) (Note that there are many different methods for computing $R^2$ values for (G)LMMs: see e.g. Nakagawa, Johnson and Schielzeth (2017), Jaeger et al. (2017).)
+- **$R^2$ calculations**: `r pkg("r2glmm")` ($R^2$ and partial $R^2$), `r pkg("MuMIn")` (`r.squaredGLMM()` function), `r pkg("partR2")`, `r pkg("performance")` (`r2()` function), `r pkg("rr2")` (Note that there are many different methods for computing $R^2$ values for (G)LMMs: see e.g. Nakagawa, Johnson and Schielzeth (2017), Jaeger et al. (2017).)
 - **Information criteria**: `r pkg("cAIC4")` (conditional AIC) , `r pkg("blmeco")` (WAIC).
 - **Robust variance-covariance estimates**: `r pkg("clubSandwich")`, `r pkg("merDeriv")`.
 
@@ -187,7 +187,7 @@ Functions and frameworks for convenient and tabular and graphical output of mixe
 These functions provide convenient frameworks to fit and interpret mixed models.
 
 - **Model fitting**: `r pkg("multilevelmod", priority = "core")`,  `r pkg("ez")`, `r pkg("mixlm")`, `r pkg("afex")`, and `r pkg("nimble")`.
-- **Model summary**: `r pkg("broom.mixed", priority = "core")`, `r pkg("insight")`.
+- **Model summaries**: `r pkg("broom.mixed", priority = "core")`, `r pkg("insight")`
 - **Variable selection & model averaging**: `r pkg("LMERConvenienceFunctions")`, `r pkg("MuMIn")`, `r pkg("glmulti")` (see, e.g., [maintainer's blog](https://vcalcagnoresearch.wordpress.com/package-glmulti/) or [here](https://gist.github.com/bbolker/4ae3496c0ddf99ea2009a22b94aecbe5) for use with mixed models).
 
 ### Inference and model selection
