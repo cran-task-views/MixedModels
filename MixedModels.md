@@ -95,6 +95,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - `r pkg("wgeesel")` implements a weighted extension of generalized linear models for longitudinal clustered data by incorporating the correlation within-cluster when data is missing at random.
 - `r pkg("geesmv")`: GEE estimator using the original sandwich variance estimator proposed by Liang and Zeger (1986), and eight types of variance estimators for improving the finite small-sample performance.
 - `r pkg("multgee")` is a GEE solver for correlated nominal or ordinal multinomial responses.
+- `r pkg("glmtoolbox")` handles a wide variety of model types (GLMs, beta-binomial and negative binomial, zero-inflation and zero-alteration, mixed models) via GEEs
 
 ### Specialized models
 
