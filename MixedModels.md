@@ -134,8 +134,8 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 These packages do not directly provide functions to fit mixed models, but instead implement interfaces to general-purpose sampling and optimization toolboxes that can be used to fit mixed models. While models require extra effort to set up, and often require programming in a domain-specific language other than R, these frameworks are more flexible than most of the other packages listed here.
 
 * Interfaces to [JAGS](https://mcmc-jags.sourceforge.io/)/[OpenBUGS](https://www.mrc-bsu.cam.ac.uk/software/bugs/openbugs/): `r pkg("R2jags")`, `r pkg("rjags")`, `r pkg("R2OpenBUGS")` (BUGS language).
-* Interfaces to [Stan](http://mc-stan.org/) (C++ extensions): `r pkg("rstan")`, `r github("stan-dev/cmdstanr")`, `r github("rmcelreath/rethinking")`.
-* Other frameworks: `r pkg("TMB")` (automatic differentiation and Laplace approximation) (C++ extensions), `r pkg("tmbstan")`, `r pkg("nimble")`, `r pkg("greta")` (R interface to TensorFlow).
+* Interfaces to [Stan](http://mc-stan.org/) (C++ extensions): `r pkg("rstan")`, `r github("stan-dev/cmdstanr")`, `r github("rmcelreath/rethinking")` (`ulam()` function).
+* Other frameworks: `r pkg("TMB")` (automatic differentiation and Laplace approximation via C++ extensions), `r pkg("RTMB")` (simplified R interface to `TMB`), `r pkg("tmbstan")`, `r pkg("nimble")`, `r pkg("greta")` (R interface to TensorFlow).
 
 
 ### Model diagnostics and summary statistics
