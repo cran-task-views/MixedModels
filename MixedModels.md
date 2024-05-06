@@ -12,7 +12,7 @@ source: https://github.com/cran-task-views/MixedModels/
 
 *Mixed* (or *mixed-effect*) *models* are a broad class of statistical models used to analyze data where observations can be assigned *a priori* to discrete groups, and where the parameters describing the differences between groups are treated as random (or *latent*) variables. They are one category of *multilevel*, or *hierarchical* models; *longitudinal* data are often analyzed in this framework. In econometrics, longitudinal or cross-sectional time series data are often referred to as *panel data* and are sometimes fitted with mixed models.  Mixed models can be fitted in either frequentist or Bayesian frameworks.
 
-This task view only includes models that incorporate *continuous* (usually although not always Gaussian) latent variables. This excludes packages that handle hidden Markov models, latent Markov models, and finite (discrete) mixture models (some of these are covered by the `r view("Cluster")` task view). Dynamic linear models and other state-space models that do not incorporate a discrete grouping variable are also excluded (some of these are covered by the `r view("TimeSeries")` task view). Bioinformatic applications of [mixed models hosted on Bioconductor](https://bioconductor.org/help/search/index.html?q="mixed+models"/) are excluded as well.
+This task view only includes models that incorporate *continuous* (usually although not always Gaussian) latent variables. This excludes packages that handle hidden Markov models, latent Markov models, and finite (discrete) mixture models (some of these are covered by the `r view("Cluster")` task view). Dynamic linear models and other state-space models that do not incorporate a discrete grouping variable are also excluded (some of these are covered by the `r view("TimeSeries")` task view). Bioinformatic applications of [mixed models hosted on Bioconductor](https://bioconductor.org/help/search/index.html?q="mixed+models"/) are mostly excluded as well.
 
 
 ### Basic model fitting
@@ -193,7 +193,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 - **Model summaries**: `r pkg("broom.mixed", priority = "core")`, `r pkg("insight")`
 - **Variable selection & model averaging**: `r pkg("LMERConvenienceFunctions")`, `r pkg("MuMIn")`, `r pkg("glmulti")` (see, e.g., [maintainer's blog](https://vcalcagnoresearch.wordpress.com/package-glmulti/) or [here](https://gist.github.com/bbolker/4ae3496c0ddf99ea2009a22b94aecbe5) for use with mixed models).
 `r pkg("mlmhelpr")`
-* **Centering/scaling predictors** at the population or group level: `r pkg("mlmhelper")`, `r pkg("mlmtools")`, `arm::standardize()`
+* **Centering/scaling predictors** at the population or group level: `r pkg("mlmhelpr")`, `r pkg("mlmtools")`, `arm::standardize()`
 
 ### Inference and model selection
 
@@ -234,6 +234,7 @@ These topics are closely related because there are few available analytical meth
   for initial estimates of PK models.
 
 ### Links
+
 - Help: [R-SIG-mixed-models mailing list](https://stat.ethz.ch/mailman/listinfo/r-sig-mixed-models) for discussion of mixed-model-related questions, course announcements, etc..
 - Help: [[r] + [mixed-models] tags on Stack Overflow](http://stackoverflow.com/questions/tagged/r+mixed-models).
 - Help: [Cross Validated](http://stats.stackexchange.com/).
