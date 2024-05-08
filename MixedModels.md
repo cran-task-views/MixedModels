@@ -214,7 +214,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 These topics are closely related because there are few available analytical methods for computing statistical power for mixed models; power usually needs to be estimated by simulation.
 
-- **Power**: `r pkg("longpower")`, `r pkg("pass.lme")` `r pkg("simr")`
+- **Power**: `r pkg("longpower")`, `r pkg("pass.lme")`, `r pkg("simr")`, `r pkg("powerEQTL")` (`powerLME` function), `r github("DejanDraschkow/mixedpower")`
 - **Simulation**: `r pkg("faux")`; `simulate()` in `lme4` (for formula arguments), `glmmTMB::simulate_new()`; `r pkg("rxode2")`, `r pkg("mrgsolve")`, `r pkg("PKPDsim")` (ODE/pharmacokinetic models)
 
 #### Model selection
@@ -225,7 +225,7 @@ These topics are closely related because there are few available analytical meth
 ### Commercial software interfaces
 
 - [Mplus](https://www.statmodel.com/): `r pkg("MplusAutomation")`.
-- [ASReml R](https://vsni.co.uk/software/asreml-r): `r pkg("asremlPlus")`.
+- [ASReml R](https://vsni.co.uk/software/asreml-r) (commercial): `r pkg("asremlPlus")`.
 - `r pkg("babelmixr2")` allows `r pkg("nlmixr2")` models to be translated and run in either the commercial tool 
   [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/innovation/nonmem/) and then reads the results 
   back in to create a standardized `nlmixr2` fit object. This fit object runs the diagnostics in `nlmixr2` and compares them
