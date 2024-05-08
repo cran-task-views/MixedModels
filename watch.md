@@ -1,2 +1,2 @@
-- `nlmm`: currently archived but may return
-- `rmm`, `lmerMultiMember`: both Github but headed to CRAN soon
+- `margins`, `dotwhisker`: hopefully restored from archiving soon!
+- `qgtools`: reasonably recently (2024-04-20) archived, hopefully coming back

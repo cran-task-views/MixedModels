@@ -3,7 +3,7 @@ name: MixedModels
 topic: Mixed, Multilevel, and Hierarchical Models in R
 maintainer: Ben Bolker, Julia Piaskowski, Emi Tanaka, Phillip Alday, Wolfgang Viechtbauer
 email: bolker@mcmaster.ca
-version: 2024-05-06
+version: 2024-05-08
 source: https://github.com/cran-task-views/MixedModels/
 ---
 
@@ -168,7 +168,7 @@ The first and second derivatives of log-likelihood with respect to parameters ca
 Many packages include small example data sets (e.g., `r pkg("lme4", priority = "core")`, `r pkg("nlme", priority = "core")`). These packages provide previously described data sets often used in evaluating mixed models.
 
 - `r pkg("mlmRev")`: examples from the Multilevel Software Comparative Reviews.
-- `r pkg("SASmixed")`: data sets from *[SAS System for Mixed Models](https://v8doc.sas.com/sashtml/hrddoc/indfiles/55235.htm)*.
+- `r pkg("SASmixed")`: data sets from *[SAS System for Mixed Models](https://support.sas.com/content/dam/SAS/support/en/books/sas-for-mixed-models-an-introduction/68787_excerpt.pdf)
 - `r pkg("StroupGLMM")`: R scripts and data sets for *[Generalized Linear Mixed Models](https://www.taylorfrancis.com/books/mono/10.1201/b13151/generalized-linear-mixed-models-walter-stroup)*.
 - `r pkg("blmeco")`: Data and functions accompanying *[Bayesian Data Analysis in Ecology using R, BUGS and Stan](https://www.elsevier.com/books/bayesian-data-analysis-in-ecology-using-linear-models-with-r-bugs-and-stan/korner-nievergelt/978-0-12-801370-0)*.
 - `r pkg("nlmeU")`: Data sets, functions and scripts described in *[Linear Mixed-Effects Models: A Step-by-Step Approach](https://link.springer.com/book/10.1007/978-1-4614-3900-4)*.
@@ -225,9 +225,9 @@ These topics are closely related because there are few available analytical meth
 ### Commercial software interfaces
 
 - [Mplus](https://www.statmodel.com/): `r pkg("MplusAutomation")`.
-- [ASReml R](https://vsni.co.uk/software/asreml-r) (commercial): `r pkg("asremlPlus")`.
+- [ASReml-R](https://vsni.co.uk/software/asreml-r): `r pkg("asremlPlus")`.
 - `r pkg("babelmixr2")` allows `r pkg("nlmixr2")` models to be translated and run in either the commercial tool 
-  [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/innovation/nonmem/) and then reads the results 
+  [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/solutions/technologies/nonmem) and then reads the results 
   back in to create a standardized `nlmixr2` fit object. This fit object runs the diagnostics in `nlmixr2` and compares them
   to the ones output in the commercial software to "validate" the fit object against the output of the commercial tool.  
   It also interfaces with free tools such as `r pkg("PKNCA")` for automatically using observed pharmacokinetic (PK) data 
@@ -238,11 +238,11 @@ These topics are closely related because there are few available analytical meth
 - Help: [R-SIG-mixed-models mailing list](https://stat.ethz.ch/mailman/listinfo/r-sig-mixed-models) for discussion of mixed-model-related questions, course announcements, etc..
 - Help: [[r] + [mixed-models] tags on Stack Overflow](http://stackoverflow.com/questions/tagged/r+mixed-models).
 - Help: [Cross Validated](http://stats.stackexchange.com/).
-- Other software: [Mixed models Bioconductor](https://bioconductor.org/help/search/index.html?q="mixed+models"/)
-- Other software: [ASReml-R](https://vsni.co.uk/software/asreml-r) (`r pkg("asremlPlus")`).
+- Other software: [Mixed models on Bioconductor](https://bioconductor.org/help/search/index.html?q="mixed+models"/)
+- Other software: [ASReml-R](https://vsni.co.uk/software/asreml-r) (commercial: `r pkg("asremlPlus")`).
 - Other software: [assist](https://yuedong.faculty.pstat.ucsb.edu/software.html).
 - Other software: [INLA](http://www.r-inla.org/home).
-- Other software: [Zelig Project](https://zeligproject.org/).
+- Other software: [Zelig Project](http://docs.zeligproject.org/)
 - Other software: [MixWild/MixRegLS](https://voices.uchicago.edu/hedeker/mixwild_mixregls/) for scale-location modeling.
 - Other software: [MixedModels.jl](https://github.com/JuliaStats/MixedModels.jl) for mixed models in Julia.
 - Other software: [Monolix](https://monolix.lixoft.com/) for ODE based mixed models (commercial).
