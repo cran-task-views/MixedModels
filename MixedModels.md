@@ -69,7 +69,7 @@ The following packages (in addition to `r pkg("bamlss")`) find maximum *a poster
 - [INLA](https://www.r-inla.org) uses integrated nested Laplace approximation to fit GLMMs using a  wide range of latent models (especially for spatial estimation), priors, and distributions.
    - `r pkg("inlabru")` facilitates spatial modeling using integrated nested Laplace approximation via the R-INLA package. Additionally, extends the GAM-like model class to more general nonlinear predictor expressions and implements a log-Gaussian Cox process likelihood for modeling univariate and spatial point processes based on ecological survey data.
    - `r github("inbo/inlatools")` provides tools to set sensible priors and check the dispersion and distribution of INLA models.
-   
+
 `r pkg("vglmer")` estimates GLMMs by variational Bayesian methods.
 
 #### Nonlinear mixed models
@@ -93,7 +93,6 @@ Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be 
 General estimating equations (GEEs) are an alternative approach to fitting clustered, longitudinal, or otherwise correlated data. These models produce estimates of the *marginal* effects (averaged across the group-level variation) rather than *conditional* effects (conditioned on group-level information).
 
 - `r pkg("geepack", priority = "core")`, `r pkg("gee")`, and `r pkg("geeM")` are standard GEE solvers, providing GEE estimation of the parameters in mean structures with possible correlation between the outcomes.
-- `r pkg("wgeesel")` implements a weighted extension of generalized linear models for longitudinal clustered data by incorporating the correlation within-cluster when data is missing at random.
 - `r pkg("geesmv")`: GEE estimator using the original sandwich variance estimator proposed by Liang and Zeger (1986), and eight types of variance estimators for improving the finite small-sample performance.
 - `r pkg("multgee")` is a GEE solver for correlated nominal or ordinal multinomial responses.
 - `r pkg("glmtoolbox")` handles a wide variety of model types (GLMs, beta-binomial and negative binomial, zero-inflation and zero-alteration, mixed models) via GEEs
@@ -109,7 +108,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Doubly hierarchical GLMs**: `r pkg("dhglm")`, `r pkg("mdhglm")` (multivariate)
 - **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`; see also the `r view("Psychometrics")` task view.
 - **Flexible correlation structures**: `r pkg("brms")`, `r pkg("glmmTMB")`, `r pkg("sommer")`, `r pkg("glmmrBase")`, `r pkg("regress")`
-- **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("sommer", priority = "core")`, `r pkg("rrBLUP")`, `r pkg("BGLR")`, `r github("perpdgo/lme4GS")`, `r github("variani/lme4qtl")`, `r pkg("qgtools")`, `r github("cheuerde/cpgen")`, `r pkg("QTLRel")`. 
+- **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("sommer", priority = "core")`, `r pkg("rrBLUP")`, `r pkg("BGLR")`, `r github("perpdgo/lme4GS")`, `r github("variani/lme4qtl")`, `r github("cheuerde/cpgen")`, `r pkg("QTLRel")`.
 - **Location-scale models**: `r pkg("nlme", priority = "core")`, `r pkg("glmmTMB", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("mgcv")` [with `family` chosen from one of the `*ls`/`*lss` options]  all allow modeling of the dispersion/scale component.
 - **Missing values**: `r pkg("mice")`, `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`, `r pkg("pan")`; see also the `r view("MissingData")` task view.
 - [**Multiple membership models**]{#multimembership-models}: (Bayesian) `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r github("benrosche/rmm")`; (frequentist) `r github("jvparidon/lmerMultiMember")` (can also fit the Bradley-Terry model)
@@ -226,11 +225,11 @@ These topics are closely related because there are few available analytical meth
 
 - [Mplus](https://www.statmodel.com/): `r pkg("MplusAutomation")`.
 - [ASReml-R](https://vsni.co.uk/software/asreml-r): `r pkg("asremlPlus")`.
-- `r pkg("babelmixr2")` allows `r pkg("nlmixr2")` models to be translated and run in either the commercial tool 
-  [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/solutions/technologies/nonmem) and then reads the results 
+- `r pkg("babelmixr2")` allows `r pkg("nlmixr2")` models to be translated and run in either the commercial tool
+  [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/solutions/technologies/nonmem) and then reads the results
   back in to create a standardized `nlmixr2` fit object. This fit object runs the diagnostics in `nlmixr2` and compares them
-  to the ones output in the commercial software to "validate" the fit object against the output of the commercial tool.  
-  It also interfaces with free tools such as `r pkg("PKNCA")` for automatically using observed pharmacokinetic (PK) data 
+  to the ones output in the commercial software to "validate" the fit object against the output of the commercial tool.
+  It also interfaces with free tools such as `r pkg("PKNCA")` for automatically using observed pharmacokinetic (PK) data
   for initial estimates of PK models.
 
 ### Links
