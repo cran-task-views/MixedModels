@@ -69,7 +69,7 @@ The following packages (in addition to `r pkg("bamlss")`) find maximum *a poster
 - [INLA](https://www.r-inla.org) uses integrated nested Laplace approximation to fit GLMMs using a  wide range of latent models (especially for spatial estimation), priors, and distributions.
    - `r pkg("inlabru")` facilitates spatial modeling using integrated nested Laplace approximation via the R-INLA package. Additionally, extends the GAM-like model class to more general nonlinear predictor expressions and implements a log-Gaussian Cox process likelihood for modeling univariate and spatial point processes based on ecological survey data.
    - `r github("inbo/inlatools")` provides tools to set sensible priors and check the dispersion and distribution of INLA models.
-   
+
 `r pkg("vglmer")` estimates GLMMs by variational Bayesian methods.
 
 #### Nonlinear mixed models
@@ -225,11 +225,11 @@ These topics are closely related because there are few available analytical meth
 
 - [Mplus](https://www.statmodel.com/): `r pkg("MplusAutomation")`.
 - [ASReml-R](https://vsni.co.uk/software/asreml-r): `r pkg("asremlPlus")`.
-- `r pkg("babelmixr2")` allows `r pkg("nlmixr2")` models to be translated and run in either the commercial tool 
-  [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/solutions/technologies/nonmem) and then reads the results 
+- `r pkg("babelmixr2")` allows `r pkg("nlmixr2")` models to be translated and run in either the commercial tool
+  [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/solutions/technologies/nonmem) and then reads the results
   back in to create a standardized `nlmixr2` fit object. This fit object runs the diagnostics in `nlmixr2` and compares them
-  to the ones output in the commercial software to "validate" the fit object against the output of the commercial tool.  
-  It also interfaces with free tools such as `r pkg("PKNCA")` for automatically using observed pharmacokinetic (PK) data 
+  to the ones output in the commercial software to "validate" the fit object against the output of the commercial tool.
+  It also interfaces with free tools such as `r pkg("PKNCA")` for automatically using observed pharmacokinetic (PK) data
   for initial estimates of PK models.
 
 ### Links
