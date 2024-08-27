@@ -130,7 +130,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Survival analysis**: `r pkg("coxme")`.
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`, `r pkg("gpboost")`
 - **Weighted models**: `r pkg("WeMix")` (linear and logit models with weights at multiple levels)
-- **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`; (Bayesian): `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("bamlss")`, `r pkg("mgcv")` (zi Poisson only).
+- **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`, `r pkg("mgcv")` (zi Poisson only), `r pkg("GLMMadaptive")`; (Bayesian): `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("bamlss")`.
 - **Zero-one inflated Beta regression**: `r pkg("brms")`, `r pkg("zoib")`, `r pkg("glmmTMB")` (zero-inflated only). *Ordered beta regression* is an alternative framework to address the same type of data: `r pkg("ordbetareg")`, `r pkg("glmmTMB")`
 
 ### Hierarchical modeling frameworks
