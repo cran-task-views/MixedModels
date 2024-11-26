@@ -115,7 +115,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("mgcv")`, `r pkg("mclogit")`.
 - **Multivariate responses/multi-trait analysis**: (multiple dependent variables; the response variables may or may not be constrained to be from the same family) `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`, `r pkg("brms")`, `r pkg("sommer")`, INLA. Many mixed-effect packages allow fitting of (homogeneous) multivariate responses by "melting" the data (converting to long format) and treating each observation in the original data as a cluster.
 - **Non-Gaussian random effects**: `r pkg("brms", priority = "core")`, `r pkg("repeated")`, `r pkg("spaMM")`.
-- **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("cplm")`, `r pkg("GLMMadaptive")`
+- **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("GLMMadaptive")`, `r pkg("multgee")` (frequentist); `r pkg("MCMCglmm")`, `r pkg("brms")` (Bayesian), `r pkg("cplm")` (both)
 - **Over-dispersed models**: `r pkg("aod")`, `r pkg("aods3")`.
 - **Panel data**: in econometrics, *panel data* typically refers to subjects (individuals or firms) that are sampled repeatedly over time. The theoretical and computational approaches used by econometricians overlap with mixed models (e.g., see [here](https://cran.r-project.org/web/packages/plm/vignettes/A_plmPackage.html#nlme)). The `r pkg("plm")` package can fit mixed-effects panel models; see also the `r view("Econometrics")` task view.
 - **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrLMM")`, `r pkg("qrNLMM")`.
