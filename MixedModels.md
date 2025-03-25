@@ -154,7 +154,7 @@ These packages do not directly provide functions to fit mixed models, but instea
 - **Correlations**:  `r pkg("iccbeta")` (intraclass correlation), `r pkg("rptR")` (repeatabilities)
 - **$R^2$ calculations**: `r pkg("r2glmm")` ($R^2$ and partial $R^2$), `r pkg("MuMIn")` (`r.squaredGLMM()` function), `r pkg("partR2")`, `r pkg("performance")` (`r2()` function), `r pkg("rr2")`, `r pkg("mlmtools")`, `r pkg("mlmhelpr")` (Note that there are many different methods for computing $R^2$ values for (G)LMMs: see e.g. Nakagawa, Johnson and Schielzeth (2017), Jaeger et al. (2017).). Many of these packages also compute *intra-class correlations*.
 - **Information criteria**: `r pkg("cAIC4")` (conditional AIC) , `r pkg("blmeco")` (WAIC).
-- **Robust variance-covariance estimates**: `r pkg("clubSandwich")`, `r pkg("merDeriv")`, `r pkg("mlmhelpr")`, `r pkg("glmmrBase")`
+- **Robust variance-covariance estimates**: `r pkg("clubSandwich")`, `r pkg("merDeriv")`, `r pkg("mlmhelpr")`, `r pkg("glmmrBase")`, `r pkg("confintROB")`
 
 #### Derivatives
 
@@ -207,7 +207,7 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 #### Bootstrapping
 
-- `r pkg("pbkrtest")`, `r pkg("lme4", priority = "core")` (`lme4::bootMer()` function), `r pkg("lmeresampler")`, `r pkg("boot.pval")`, `r pkg("mlmhelpr")`.
+- `r pkg("pbkrtest")`, `r pkg("lme4", priority = "core")` (`lme4::bootMer()` function), `r pkg("lmeresampler")`, `r pkg("boot.pval")`, `r pkg("mlmhelpr")`, `r pkg("confintROB")`
 
 #### Power analysis and simulation
 
