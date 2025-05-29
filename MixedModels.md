@@ -3,7 +3,7 @@ name: MixedModels
 topic: Mixed, Multilevel, and Hierarchical Models in R
 maintainer: Ben Bolker, Julia Piaskowski, Emi Tanaka, Phillip Alday, Wolfgang Viechtbauer
 email: bolker@mcmaster.ca
-version: 2025-05-10
+version: 2025-05-29
 source: https://github.com/cran-task-views/MixedModels/
 ---
 
@@ -217,7 +217,7 @@ These topics are closely related because there are few available analytical meth
 
 #### Model selection
 
-- `r pkg("cAIC4")` (`cAIC4::stepcAIC`), `r pkg("buildmer")`, `r pkg("MuMIn")`, `r github("timnewbold/StatisticalModels")` (`GLMERSelect`).
+- `r pkg("cAIC4")` (`cAIC4::stepcAIC`), `r pkg("buildmer")`, `r pkg("MuMIn")`, `r github("timnewbold/StatisticalModels")` (`GLMERSelect`), `r pkg("glmmsel")`
 
 
 ### Commercial software interfaces
