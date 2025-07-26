@@ -78,7 +78,8 @@ Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be 
 *Frequentist:*
 
 - `nlme::nlme()` from `r pkg("nlme")` and `lmer4::nlmer()` from `r pkg("lme4", priority = "core")` fit nonlinear mixed effects models by maximum likelihood.
-- `nlmixr2est::nlmixr2()` from `r pkg("nlmixr2")` fits nonlinear mixed effects model by first order conditional estimation (FOCEi) maximum likelihood approximation (a different approximation than `nlme:nlme()` and `lmer4:nlmer()`), and allows generalized likelihood as well as a selection of built-in link functions.
+- `nlmixr2est::nlmixr2()` from `r pkg("nlmixr2")` fits nonlinear mixed effects model by a first order conditional estimation (FOCEi) maximum likelihood approximation (a different approximation than `nlme::nlme()` and `lmer4::nlmer()`), and allows generalized likelihood as well as a selection of built-in link functions (using `est="focei"`).
+- `nlmixr2est::nlmixr2()` can also use the approximation of `nlme::nlme` with `est="nlme"`.
 - `gnlmm()` and `gnlmm3()` from `r pkg("repeated")` fit GNLMMs by Gauss-Hermite integration.
 - `r pkg("saemix")` and `r pkg("nlmixr2")` both use a stochastic approximation of the EM algorithm to fit a wide range of GNLMMs.
 
@@ -228,8 +229,8 @@ These topics are closely related because there are few available analytical meth
   [Monolix](https://monolix.lixoft.com/) or [NONMEM](https://www.iconplc.com/solutions/technologies/nonmem) and then reads the results
   back in to create a standardized `nlmixr2` fit object. This fit object runs the diagnostics in `nlmixr2` and compares them
   to the ones output in the commercial software to "validate" the fit object against the output of the commercial tool.
-  It also interfaces with free tools such as `r pkg("PKNCA")` for automatically using observed pharmacokinetic (PK) data
-  for initial estimates of PK models.
+  It also interfaces with free tools such as:  `r pkg("PKNCA")` for automatically using observed pharmacokinetic (PK) data
+  for initial estimates of PK models and `r pkg("PopED")` for using nonlinear mixed models in optimal design.
 
 ### Links
 
