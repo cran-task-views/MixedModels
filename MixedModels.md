@@ -78,7 +78,7 @@ Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be 
 *Frequentist:*
 
 - `nlme::nlme()` from `r pkg("nlme")` and `lmer4::nlmer()` from `r pkg("lme4", priority = "core")` fit nonlinear mixed effects models by maximum likelihood.
-- `nlmixr2est::nlmixr2()` from `r pkg("nlmixr2")` fits nonlinear mixed effects model by a first order conditional estimation (FOCEi) maximum likelihood approximation (a different approximation than `nlme::nlme()` and `lmer4::nlmer()`), and allows generalized likelihood as well as a selection of built-in link functions (using `est="focei"`).
+- `nlmixr2est::nlmixr2()` from `r pkg("nlmixr2")` fits nonlinear mixed effects model by a first order conditional estimation (FOCEi) maximum likelihood approximation (a different approximation than `nlme::nlme()` and `lmer4::nlmer()`), and allows generalized likelihood as well as a selection of built-in non-Gaussian link functions (using `est="focei"`).
 - `nlmixr2est::nlmixr2()` can also use the first order approximation of `nlme::nlme` with `est="nlme"`.
 - `gnlmm()` and `gnlmm3()` from `r pkg("repeated")` fit GNLMMs by Gauss-Hermite integration.
 - `r pkg("saemix")` and `r pkg("nlmixr2")` both use a stochastic approximation of the EM algorithm to fit a wide range of GNLMMs.
