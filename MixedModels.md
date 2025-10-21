@@ -127,6 +127,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Skewed data/response transformation**: `r pkg("skewlmm")` fits a scale mixture of skew-normal linear mixed models using expectation-maximization (EM). `r pkg("nlmixr2")` can fit skewed data with dynamic transform of both sides with both `coxBox()` and `yeoJohnson()` transformations with maximum likelihood or the EM method "saem". `r pkg("bcmixed")` fits Box-Cox-transformed LMMs and provides inferences for differences between treatment levels. `r pkg("boxcoxmix")` fits Box-Cox transformed LMMs and logistic mixed models.
 - **Spatial models**: `r pkg("nlme", priority = "core")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes), `r pkg("brms", priority = "core")`, `r github("Biometris/LMMsolver")`, `r pkg("bamlss")`, `r pkg("spmodel")` (spatial linear and generalized linear mixed models, Kriging/prediction); see also the `r view("Spatial")` and `r view("SpatioTemporal")` CRAN task views.
 - **Sports analytics**: `r pkg("mvglmmRank")`, multivariate generalized linear mixed models for ranking sports teams.
+- **surveys**: `r pkg("svylme")`.
 - **Survival analysis**: `r pkg("coxme")`.
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`, `r pkg("gpboost")`
 - **Weighted models**: `r pkg("WeMix")` (linear and logit models with weights at multiple levels)
