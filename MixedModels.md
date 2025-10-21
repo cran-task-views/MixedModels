@@ -3,7 +3,7 @@ name: MixedModels
 topic: Mixed, Multilevel, and Hierarchical Models in R
 maintainer: Ben Bolker, Julia Piaskowski, Emi Tanaka, Phillip Alday, Wolfgang Viechtbauer
 email: bolker@mcmaster.ca
-version: 2025-06-25
+version: 2025-10-21
 source: https://github.com/cran-task-views/MixedModels/
 ---
 
@@ -108,8 +108,8 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - [**Differential equations**]{#differential-equations} (fitting DEs with group-structured parameters; this category overlaps considerably with **pharmacokinetic modeling**): `r pkg("mixedsde")` for stochastic DEs. Ordinary DEs can be run with `r pkg("nlmixr2")` using the "focei" or "saem" (EM) methods, or using the `r pkg("nlme")` package; see also the `r view("DifferentialEquations")` and `r view("Pharmacokinetics")` task views.
 - **Doubly hierarchical GLMs**: `r pkg("dhglm")`, `r pkg("mdhglm")` (multivariate)
 - **Factor analytic, latent variable, and structural equation models**:  `r pkg("lavaan", priority = "core")`, `r pkg("nlmm")`,`r pkg("sem")`, `r pkg("piecewiseSEM")`, `r pkg("semtree")`, and  `r pkg("blavaan")`; see also the `r view("Psychometrics")` task view.
-- **Flexible correlation structures**: `r pkg("brms")`, `r pkg("glmmTMB")`, `r pkg("sommer")`, `r pkg("glmmrBase")`, `r pkg("regress")`
-- **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("sommer", priority = "core")`, `r pkg("rrBLUP")`, `r pkg("BGLR")`, `r github("perpdgo/lme4GS")`, `r github("variani/lme4qtl")`, `r github("cheuerde/cpgen")`, `r pkg("QTLRel")`.
+- **Flexible correlation structures**: `r pkg("brms")`, `r pkg("glmmTMB")`, `r pkg("sommer")`, `r pkg("lme4breeding")` (sommer functions with lme4 machinery), `r pkg("glmmrBase")`, `r pkg("regress")`
+- **Kinship-augmented models** (responses where individuals have a known family relationship): `r pkg("pedigreemm")`, `r pkg("coxme")`, `r pkg("kinship2")`, `r github("Biometris/LMMsolver")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("sommer", priority = "core")`,  `r pkg("lme4breeding")` (adding sommer capabilities to lme4), `r pkg("rrBLUP")`, `r pkg("BGLR")`, `r github("perpdgo/lme4GS")`, `r github("variani/lme4qtl")`, `r github("cheuerde/cpgen")`, `r pkg("QTLRel")`, `r pkg("dmm")` for multi-variable responses.
 - **Location-scale models**: `r pkg("nlme", priority = "core")`, `r pkg("glmmTMB", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("mgcv")` [with `family` chosen from one of the `*ls`/`*lss` options]  all allow modeling of the dispersion/scale component.
 - **Missing values**: `r pkg("mice")`, `r pkg("micemd")`, `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`, `r pkg("pan")`; see also the `r view("MissingData")` task view.
 - [**Multiple membership models**]{#multimembership-models}: (Bayesian) `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r github("benrosche/rmm")`; (frequentist) `r github("jvparidon/lmerMultiMember")` (can also fit the Bradley-Terry model)
