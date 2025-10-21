@@ -93,10 +93,13 @@ Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be 
 
 General estimating equations (GEEs) are an alternative approach to fitting clustered, longitudinal, or otherwise correlated data. These models produce estimates of the *marginal* effects (averaged across the group-level variation) rather than *conditional* effects (conditioned on group-level information).
 
+<!-- Should glmtoolbox displace geepack as 'core' package? 2230 GShits since 2021; glmtoolbox only 147. Could check recent downloads counts? -->
+
 - `r pkg("geepack", priority = "core")`, `r pkg("gee")`, and `r pkg("geeM")` are standard GEE solvers, providing GEE estimation of the parameters in mean structures with possible correlation between the outcomes.
 - `r pkg("geesmv")`: GEE estimator using the original sandwich variance estimator proposed by Liang and Zeger (1986), and eight types of variance estimators for improving the finite small-sample performance.
 - `r pkg("multgee")` is a GEE solver for correlated nominal or ordinal multinomial responses.
 - `r pkg("glmtoolbox")` handles a wide variety of model types (GLMs, beta-binomial and negative binomial, zero-inflation and zero-alteration, mixed models) via GEEs
+- `r pkg("MIIPW")`, `r pkg("CRTgeeDR")`, `r pkg("drgee")`, `r pkg("geeCRT")` offer various methods for dealing with missing data in GEEs
 
 ### Specialized models/tasks
 
