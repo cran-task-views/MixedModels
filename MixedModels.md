@@ -124,7 +124,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Repeated measures**: (packages with specialized covariance structures for handling repeated measures) `r pkg("nlme", priority = "core")`, `r pkg("mmrm")`, `r pkg("glmmTMB", priority = "core")`, `r github("Biometris/LMMsolver")`, `r pkg("repeated")`, `r pkg("mmrm")`
 - **Regularized/penalized models** (regularization or variable selection by ridge, lasso, or elastic net penalties): `r pkg("splmm")` fits LMMs for high-dimensional data by imposing penalty on both the fixed effects and random effects for variable selection. `r pkg("glmmLasso")` fits GLMMs with L1-penalized (LASSO) fixed effects. `r pkg("bamlss")` implements LASSO-like penalization for generalized additive models. `r pkg("ggmix")` fits penalized mixed models in the context of genetic association studies.
 - **Robust/heavy-tailed estimation** (downweighting the importance of extreme observations): `r pkg("robustlmm")`, `r pkg("robustBLME")` (Bayesian robust LME), `r pkg("CRTgeeDR")` for the doubly robust inverse probability weighted augmented GEE estimator. Some packages (`r pkg("brms", priority = "core")`, `r pkg("bamlss")`, `r pkg("GLMMadaptive")`, `r pkg("glmmTMB")`, `r pkg("mgcv")` with `family = "scat"`, `r pkg("nlmixr2")`) allow heavy-tailed response distributions such as Student-$t$.
-- **Skewed data/response transformation**: `r pkg("skewlmm")` fits a scale mixture of skew-normal linear mixed models using expectation-maximization (EM). `r pkg("nlmixr2")` can fit skewed data with dynamic transform of both sides with both `coxBox()` and `yeoJohnson()` transformations with maximum likelihood or the EM method "saem". `r pkg("bcmixed")` fits Box-Cox-transformed LMMs and provides inferences for differences between treatment levels. `r pkg("boxcoxmix")` fits Box-Cox transformed LMMs and logistic mixed models. `r pkg("tramME")` fit transformative model using the template model builder. 
+- **Skewed data/response transformation**: `r pkg("skewlmm")` fits a scale mixture of skew-normal linear mixed models using expectation-maximization (EM). `r pkg("nlmixr2")` can fit skewed data with dynamic transform of both sides with both `coxBox()` and `yeoJohnson()` transformations with maximum likelihood or the EM method "saem". `r pkg("bcmixed")` fits Box-Cox-transformed LMMs and provides inferences for differences between treatment levels. `r pkg("boxcoxmix")` fits Box-Cox transformed LMMs and logistic mixed models. `r pkg("tramME")` fit mixed-effect transformation models using [Template Model Builder](https://CRAN.R-project.org/package=TMB)
 - **Spatial models**: `r pkg("nlme", priority = "core")` (with `corStruct` functions), `r pkg("CARBayesST")`, `r pkg("sphet")`, `r pkg("spind")`, `r pkg("spaMM")`, `r pkg("glmmfields")`, `r pkg("glmmTMB")`, `r pkg("inlabru")` (spatial point processes via log-Gaussian Cox processes), `r pkg("brms", priority = "core")`, `r github("Biometris/LMMsolver")`, `r pkg("bamlss")`, `r pkg("spmodel")` (spatial linear and generalized linear mixed models, Kriging/prediction); see also the `r view("Spatial")` and `r view("SpatioTemporal")` CRAN task views.
 - **Sports analytics**: `r pkg("mvglmmRank")`, multivariate generalized linear mixed models for ranking sports teams.
 - **surveys**: `r pkg("svylme")`.
@@ -205,6 +205,8 @@ These functions provide convenient frameworks to fit and interpret mixed models.
 
 #### Prediction and estimation
 
+Various forms of prediction including contrasts, effects plots, marginal effects, etc..
+
 - `r pkg("emmeans")`, `r pkg("effects")`, `r pkg("margins")`, `r pkg("MarginalMediation")`, `r pkg("marginaleffects")`, `r pkg("ggeffects")`.
 
 #### Bootstrapping
@@ -221,7 +223,6 @@ These topics are closely related because there are few available analytical meth
 #### Model selection
 
 - `r pkg("cAIC4")` (`cAIC4::stepcAIC`), `r pkg("buildmer")`, `r pkg("MuMIn")`, `r github("timnewbold/StatisticalModels")` (`GLMERSelect`), `r pkg("glmmsel")`
-
 
 ### Commercial software interfaces
 
