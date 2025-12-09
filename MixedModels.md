@@ -3,7 +3,7 @@ name: MixedModels
 topic: Mixed, Multilevel, and Hierarchical Models in R
 maintainer: Ben Bolker, Julia Piaskowski, Emi Tanaka, Phillip Alday, Wolfgang Viechtbauer
 email: bolker@mcmaster.ca
-version: 2025-12-05
+version: 2025-12-09
 source: https://github.com/cran-task-views/MixedModels/
 ---
 
@@ -53,6 +53,7 @@ Generalized linear mixed models (GLMMs) can be described as hierarchical extensi
 - `r pkg("mbest")` fits large nested GLMMs using a fast moment-based approach.
 - `r pkg("galamm")` fits a wide variety of models (heteroscedastic, mixed response types, factor loadings, etc.)
 - `r pkg("glmmrBase")` uses MCMC and Laplace approximations to Gaussian, binomial, Poisson, Beta, Gamma responses with flexible correlation structures
+- `r pkg("aster")` fits *aster models* (Geyer et al. *Ann. Appl. Stat*. 2013), a generalization of GLMMs
 
 *Bayesian:*
 
@@ -116,7 +117,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Missing values**: `r pkg("mice")`, `r pkg("micemd")`, `r pkg("CRTgeeDR")`, `r pkg("JointAI")`, `r pkg("mdmb")`, `r pkg("pan")`; see also the `r view("MissingData")` task view.
 - [**Multiple membership models**]{#multimembership-models}: (Bayesian) `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r github("benrosche/rmm")`; (frequentist) `r github("jvparidon/lmerMultiMember")` (can also fit the Bradley-Terry model)
 - **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("mgcv")`, `r pkg("mclogit")`.
-- **Multivariate responses/multi-trait analysis**: (multiple dependent variables; the response variables may or may not be constrained to be from the same family) `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`, `r pkg("brms")`, `r pkg("sommer")`, `r pkg("gllvm")`, INLA. Many mixed-effect packages allow fitting of (homogeneous) multivariate responses by "melting" the data (converting to long format) and treating each observation in the original data as a cluster.
+- **Multivariate responses/multi-trait analysis**: (multiple dependent variables; the response variables may or may not be constrained to be from the same family) `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`, `r pkg("brms")`, `r pkg("sommer")`, `r pkg("gllvm")`, `r pkg("aster")`, INLA. Many mixed-effect packages allow fitting of (homogeneous) multivariate responses by "melting" the data (converting to long format) and treating each observation in the original data as a cluster.
 - **Non-Gaussian random effects**: `r pkg("brms", priority = "core")`, `r pkg("repeated")`, `r pkg("spaMM")`.
 - **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("GLMMadaptive")`, `r pkg("multgee")` (frequentist); `r pkg("MCMCglmm")`, `r pkg("brms")` (Bayesian), `r pkg("cplm")` (both)
 - **Over-dispersed models**: `r pkg("aod")`, `r pkg("aods3")`.
@@ -133,7 +134,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Survival analysis**: `r pkg("coxme")`.
 - **Tree-based models**: `r pkg("glmertree")`, `r pkg("semtree")`, `r pkg("gpboost")`
 - **Weighted models**: `r pkg("WeMix")` (linear and logit models with weights at multiple levels), `r pkg("svylme")` (probability/sample weighting)
-- **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`, `r pkg("mgcv")` (zi Poisson only), `r pkg("GLMMadaptive")`; (Bayesian): `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("bamlss")`.
+- **Zero-inflated models**: (frequentist) `r pkg("glmmTMB")`, `r pkg("cplm")`, `r pkg("mgcv")` (zi Poisson only), `r pkg("GLMMadaptive")`, `r pkg("aster")`; (Bayesian): `r pkg("MCMCglmm", priority = "core")`, `r pkg("brms", priority = "core")`, `r pkg("bamlss")`.
 - **Zero-one inflated Beta regression**: `r pkg("brms")`, `r pkg("zoib")`, `r pkg("glmmTMB")` (zero-inflated only). *Ordered beta regression* is an alternative framework to address the same type of data: `r pkg("ordbetareg")`, `r pkg("glmmTMB")`
 
 ### Hierarchical modeling frameworks
