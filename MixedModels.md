@@ -78,8 +78,8 @@ Nonlinear mixed models incorporate arbitrary nonlinear responses that cannot be 
 
 *Frequentist:*
 
-- `nlme::nlme()` from `r pkg("nlme")` and `lmer4::nlmer()` from `r pkg("lme4", priority = "core")` fit nonlinear mixed effects models by maximum likelihood.
-- `nlmixr2est::nlmixr2()` from `r pkg("nlmixr2")` fits nonlinear mixed effects model by a first order conditional estimation (FOCEi) maximum likelihood approximation (a different approximation than `nlme::nlme()` and `lmer4::nlmer()`), and allows generalized likelihood as well as a selection of built-in non-Gaussian link functions (using `est="focei"`).
+- `nlme::nlme()` from `r pkg("nlme")` and `lme4::nlmer()` from `r pkg("lme4", priority = "core")` fit nonlinear mixed effects models by maximum likelihood.
+- `nlmixr2est::nlmixr2()` from `r pkg("nlmixr2")` fits nonlinear mixed effects model by a first order conditional estimation (FOCEi) maximum likelihood approximation (a different approximation than `nlme::nlme()` and `lme4::nlmer()`), and allows generalized likelihood as well as a selection of built-in non-Gaussian link functions (using `est="focei"`).
 - `nlmixr2est::nlmixr2()` can also use the first order approximation of `nlme::nlme` with `est="nlme"`.
 - `gnlmm()` and `gnlmm3()` from `r pkg("repeated")` fit GNLMMs by Gauss-Hermite integration.
 - `r pkg("saemix")` and `r pkg("nlmixr2")` both use a stochastic approximation of the EM algorithm to fit a wide range of GNLMMs.
@@ -120,7 +120,7 @@ General estimating equations (GEEs) are an alternative approach to fitting clust
 - **Multinomial responses**: `r pkg("bamlss")`, `r pkg("R2BayesX")`, `r pkg("MCMCglmm", priority = "core")`, `r pkg("mgcv")`, `r pkg("mclogit")`.
 - **Multivariate responses/multi-trait analysis**: (multiple dependent variables; the response variables may or may not be constrained to be from the same family) `r pkg("MCMCglmm", priority = "core")`, `r github("deruncie/MegaLMM")`, `r pkg("brms")`, `r pkg("sommer")`, `r pkg("gllvm")`, `r pkg("aster")`, INLA. Many mixed-effect packages allow fitting of (homogeneous) multivariate responses by "melting" the data (converting to long format) and treating each observation in the original data as a cluster.
 - **Non-Gaussian random effects**: `r pkg("brms", priority = "core")`, `r pkg("repeated")`, `r pkg("spaMM")`.
-- **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("GLMMadaptive")`, `r pkg("multgee")` (frequentist); `r pkg("MCMCglmm")`, `r pkg("brms")` (Bayesian), `r pkg("cplm")` (both)
+- **Ordinal-valued responses** (responses measured on an ordinal scale): `r pkg("ordinal")`, `r pkg("GLMMadaptive")`, `r pkg("multgee")`, `r pkg("mixor")` (frequentist); `r pkg("MCMCglmm")`, `r pkg("brms")` (Bayesian), `r pkg("cplm")` (both)
 - **Over-dispersed models**: `r pkg("aod")`, `r pkg("aods3")`.
 - **Panel data**: in econometrics, *panel data* typically refers to subjects (individuals or firms) that are sampled repeatedly over time. The theoretical and computational approaches used by econometricians overlap with mixed models (e.g., see [here](https://cran.r-project.org/web/packages/plm/vignettes/A_plmPackage.html#nlme)). The `r pkg("plm")` package can fit mixed-effects panel models; see also the `r view("Econometrics")` task view.
 - **Quantile regression**: `r pkg("lqmm")`, `r pkg("qrLMM")`, `r pkg("qrNLMM")`.
