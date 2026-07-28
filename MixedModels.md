@@ -64,13 +64,14 @@ Most Bayesian mixed model packages use some form of Markov chain Monte Carlo (or
 - `r pkg("brms", priority = "core")`: Hamilton Monte Carlo. Linear, robust linear, count data, survival, response times, ordinal, zero-inflated/hurdle/censored data.
 - `r pkg("bamlss")`: optimization and derivative-based Metropolis-Hastings/slice sampling. Wide range of distributions and link functions.
 
-The following packages (in addition to `r pkg("bamlss")`) find maximum *a posteriori* fits to Bayesian (G)LMMs by optimization:
+The following packages (in addition to `r pkg("bamlss")`) find maximum *a posteriori* (MAP) fits to Bayesian (G)LMMs by optimization:
 
 - `r pkg("blme")` wraps `r pkg("lme4", priority = "core")` to add prior distributions.
 - [INLA](https://www.r-inla.org) uses integrated nested Laplace approximation to fit GLMMs using a  wide range of latent models (especially for spatial estimation), priors, and distributions.
 - `r pkg("inlabru")` facilitates spatial modeling using integrated nested Laplace approximation via the R-INLA package. Additionally, extends the GAM-like model class to more general nonlinear predictor expressions and implements a log-Gaussian Cox process likelihood for modeling univariate and spatial point processes based on ecological survey data.
 - `r github("inbo/inlatools")` provides tools to set sensible priors and check the dispersion and distribution of INLA models.
 - `r pkg("vglmer")` estimates GLMMs by variational Bayesian methods.
+- `r pkg("glmmTMB")` allows the specification of priors (and hence enables MAP fits)
 
 #### Nonlinear mixed models
 
@@ -218,12 +219,13 @@ Various forms of prediction including contrasts, effects plots, marginal effects
 
 - `r pkg("pbkrtest")`, `r pkg("lme4", priority = "core")` (`lme4::bootMer()` function), `r pkg("lmeresampler")`, `r pkg("boot.pval")`, `r pkg("mlmhelpr")`, `r pkg("confintROB")`
 
-#### Power analysis and simulation
+#### Power analysis, simulation, experimental design
 
 These topics are closely related because there are few available analytical methods for computing statistical power for mixed models; power usually needs to be estimated by simulation.
 
 - **Power**: `r pkg("longpower")`, `r pkg("pass.lme")`, `r pkg("simr")`, `r pkg("powerEQTL")` (`powerLME` function), `r github("DejanDraschkow/mixedpower")`
 - **Simulation**: `r pkg("faux")`; `simulate()` in `lme4` (for formula arguments), `glmmTMB::simulate_new()`; `r pkg("rxode2")`, `r pkg("mrgsolve")`, `r pkg("PKPDsim")` (ODE/pharmacokinetic models)
+- **Experimental design**: `r pkg("glmmrOptim")`
 
 #### Model selection
 
